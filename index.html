@@ -53,6 +53,7 @@
   .album { display:flex; justify-content:center; align-items:flex-end; gap:clamp(20px, 3.4vw, 56px); margin-top:clamp(120px, 14vw, 180px); }
   .album img { height:clamp(90px, 11vw, 160px); width:auto; min-width:0; }
   .thanks { margin-top:clamp(64px, 8vw, 100px); text-align:center; font-size:12.5px; color:var(--mid); letter-spacing:.04em; }
+  .thanks-kr { display:block; margin-top:4px; font-size:12px; color:var(--light); letter-spacing:.01em; }
   @media (max-width:760px){ .album { flex-wrap:wrap; } .album img { height:110px; } }
 
   /* the space — 실제 공간, 사진마다 한 번씩 */
@@ -132,7 +133,7 @@
     <img class="rv" src="img/archive-together.jpg" alt="함께 웃는 할아버지와 가족" width="302" height="178">
     <img class="rv" src="img/archive-cap.jpg" alt="모자를 쓴 할아버지" width="314" height="142">
   </div>
-  <p class="thanks rv">Thank you, Grandpa — may you always be happy.</p>
+  <p class="thanks rv">Thank you, Grandpa — may you always be happy.<span class="thanks-kr">고맙습니다, 할아버지. 늘 행복하세요.</span></p>
 </div></section>
 
 <section id="the-space"><div class="wrap">
