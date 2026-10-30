@@ -3,68 +3,242 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Space Available — 대구 수성구 브라이덜샤워 · 셀프웨딩 공간</title>
-<meta name="description" content="할아버지가 시간을 품은 땅 위에 지은 작은 집. 대구 수성구 브라이덜샤워·셀프 웨딩 촬영 무인 대여 공간.">
+<title>Space Available · 스페이스어베일러블</title>
+<meta name="description" content="따뜻한 기억이 오늘을 밝히는 곳. 대구 수성구 브라이덜샤워 · 셀프 웨딩 촬영 무인 대여 공간.">
+<meta property="og:title" content="Space Available · 스페이스어베일러블">
+<meta property="og:description" content="따뜻한 기억이 오늘을 밝히는 곳. 대구 수성구 브라이덜샤워 · 셀프 웨딩 촬영 공간.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
-  :root { --ink:#1a1a1a; --muted:#6b6b6b; --line:#e4e0da; --wood:#a07a55; --bg:#faf8f5; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.75 -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
-  main { max-width:720px; margin:0 auto; padding:64px 20px 80px; }
-  .brand { font-size:13px; letter-spacing:.3em; text-transform:uppercase; color:var(--wood); }
-  h1 { font-size:40px; letter-spacing:-.02em; margin:8px 0 24px; font-weight:700; }
-  .lead { font-size:18px; color:#333; }
-  h2 { font-size:15px; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin:56px 0 12px; border-top:1px solid var(--line); padding-top:24px; }
-  .table-wrap { overflow-x:auto; }
-  table { width:100%; border-collapse:collapse; font-size:15px; }
-  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); }
-  th { font-weight:600; color:var(--muted); }
-  ul { padding-left:20px; }
-  .small { font-size:13px; color:var(--muted); }
-  a { color:var(--ink); }
-  footer { margin-top:64px; font-size:13px; color:var(--muted); border-top:1px solid var(--line); padding-top:20px; }
+  :root {
+    --black:#111; --ink:#1c1c1c; --gray:#8a8a8a; --line:#dedad4;
+    --paper:#f6f3ee; --white:#fff; --wood:#6b4a2f; --wood-l:#a37c58; --metal:#c9cbcd;
+    --sans:"Pretendard", -apple-system, "Apple SD Gothic Neo", sans-serif;
+    --display:"Inter", "Pretendard", sans-serif;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--paper); color:var(--ink); font:16px/1.8 var(--sans); -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+
+  /* nav */
+  nav { position:fixed; inset:0 0 auto; z-index:10; padding:18px 0; mix-blend-mode:difference; color:#fff; }
+  nav .wrap { display:flex; justify-content:space-between; align-items:center; }
+  nav .logo { font:800 15px var(--display); letter-spacing:-.01em; text-decoration:none; }
+  nav .links { display:flex; gap:22px; font-size:13px; }
+  nav .links a { text-decoration:none; opacity:.85; }
+  @media (max-width:640px){ nav .links { display:none; } }
+
+  /* hero */
+  .hero { min-height:100vh; background:var(--black); color:#fff; position:relative; overflow:hidden; display:flex; align-items:flex-end; }
+  .hero::before { /* 그리드 모티프 — 컨셉 PDF의 그리드 로고 */
+    content:""; position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size:48px 48px; mask-image:linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+  }
+  .hero::after { /* 창으로 들어오는 오후의 빛 */
+    content:""; position:absolute; width:70vmax; height:70vmax; right:-20vmax; top:-25vmax;
+    background:radial-gradient(circle, rgba(255,236,210,.22), transparent 60%);
+  }
+  .hero .wrap { position:relative; z-index:1; padding-bottom:12vh; width:100%; }
+  .eyebrow { font:600 12px var(--display); letter-spacing:.35em; text-transform:uppercase; color:var(--wood-l); }
+  .hero h1 { font:900 clamp(56px, 13vw, 168px)/.88 var(--display); letter-spacing:-.045em; margin:20px 0 32px; }
+  .hero h1 .outline { color:transparent; -webkit-text-stroke:1.5px rgba(255,255,255,.55); }
+  .hero p { font-size:clamp(17px, 2.2vw, 21px); color:#d9d6d0; max-width:520px; }
+  .hero .meta { margin-top:40px; display:flex; flex-wrap:wrap; gap:10px; }
+  .chip { border:1px solid rgba(255,255,255,.3); border-radius:99px; padding:6px 14px; font-size:13px; color:#eee; }
+
+  section { padding:120px 0; }
+  .label { font:600 12px var(--display); letter-spacing:.3em; text-transform:uppercase; color:var(--gray); display:flex; align-items:center; gap:14px; margin-bottom:40px; }
+  .label::before { content:attr(data-n); color:var(--ink); }
+  .label::after { content:""; flex:1; height:1px; background:var(--line); }
+  h2 { font:800 clamp(30px, 4.5vw, 48px)/1.25 var(--sans); letter-spacing:-.03em; }
+
+  /* story */
+  .story { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+  .story .poem { font-size:18px; line-height:2.1; color:#3a3a3a; }
+  .story .poem p + p { margin-top:1.4em; }
+  .quote { margin-top:48px; font:600 20px/1.6 var(--sans); padding-left:20px; border-left:3px solid var(--wood); }
+  @media (max-width:820px){ .story { grid-template-columns:1fr; gap:40px; } }
+
+  /* material swatches */
+  .swatches { display:flex; flex-wrap:wrap; gap:12px; margin-top:40px; }
+  .sw { width:76px; }
+  .sw i { display:block; width:76px; height:76px; border:1px solid var(--line); }
+  .sw span { display:block; font-size:11px; color:var(--gray); margin-top:6px; letter-spacing:.05em; }
+  .sw .wood { background:linear-gradient(115deg, #5b3d25, #7a5536 40%, #5e4029 60%, #86603f); }
+  .sw .metal { background:linear-gradient(135deg, #e9eaeb, #b8bbbe 45%, #f2f2f2 55%, #a9acaf); }
+
+  /* scenes */
+  .dark { background:var(--black); color:#fff; }
+  .dark .label { color:#777; } .dark .label::before { color:#fff; } .dark .label::after { background:#2c2c2c; }
+  .scenes { display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:#2c2c2c; border:1px solid #2c2c2c; margin-top:56px; }
+  .scene { background:var(--black); padding:40px 32px 44px; }
+  .scene .no { font:800 13px var(--display); color:var(--wood-l); letter-spacing:.2em; }
+  .scene h3 { font:700 24px/1.4 var(--sans); margin:18px 0 12px; letter-spacing:-.02em; }
+  .scene p { color:#aaa; font-size:15px; }
+  @media (max-width:820px){ .scenes { grid-template-columns:1fr; } }
+
+  /* photo placeholders */
+  .gallery { display:grid; grid-template-columns:2fr 1fr; grid-template-rows:240px 240px; gap:12px; margin-top:56px; }
+  .ph { background:#1d1d1d; border:1px solid #2c2c2c; display:flex; align-items:flex-end; padding:18px; font:600 11px var(--display); letter-spacing:.25em; color:#555; text-transform:uppercase; }
+  .ph.big { grid-row:span 2; }
+  @media (max-width:640px){ .gallery { grid-template-columns:1fr; grid-template-rows:220px 160px 160px; } .ph.big { grid-row:auto; } }
+
+  /* included */
+  .incl { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:16px; margin-top:56px; }
+  .card { background:var(--white); border:1px solid var(--line); padding:28px 26px; }
+  .card h4 { font-size:17px; font-weight:700; margin-bottom:10px; }
+  .card p { font-size:14.5px; color:#555; line-height:1.75; }
+  .card .free { font:800 11px var(--display); letter-spacing:.2em; color:var(--wood); display:block; margin-bottom:14px; }
+
+  /* price */
+  .price-wrap { overflow-x:auto; margin-top:56px; }
+  table { width:100%; min-width:560px; border-collapse:collapse; background:var(--white); border:1px solid var(--line); }
+  th, td { padding:22px 24px; text-align:left; border-bottom:1px solid var(--line); }
+  thead th { font:600 12px var(--display); letter-spacing:.2em; text-transform:uppercase; color:var(--gray); background:#faf9f7; }
+  tbody th { font-weight:700; font-size:16px; }
+  tbody th small { display:block; font-weight:400; font-size:13px; color:var(--gray); }
+  td b { font:800 22px var(--display); letter-spacing:-.02em; }
+  td small { color:var(--gray); font-size:13px; }
+  .note { margin-top:20px; font-size:14px; color:#666; }
+
+  /* steps */
+  .steps { display:grid; grid-template-columns:repeat(4, 1fr); gap:0; margin-top:56px; counter-reset:s; }
+  .step { padding:0 24px 0 0; border-top:2px solid var(--ink); padding-top:22px; margin-right:16px; }
+  .step::before { counter-increment:s; content:"0" counter(s); font:800 13px var(--display); letter-spacing:.2em; color:var(--wood); }
+  .step h4 { font-size:17px; margin:12px 0 8px; }
+  .step p { font-size:14.5px; color:#555; }
+  @media (max-width:820px){ .steps { grid-template-columns:1fr 1fr; row-gap:36px; } }
+  @media (max-width:480px){ .steps { grid-template-columns:1fr; } }
+
+  /* contact */
+  .contact { display:grid; grid-template-columns:1.2fr 1fr; gap:64px; }
+  .contact dl { display:grid; grid-template-columns:90px 1fr; row-gap:18px; font-size:16px; }
+  .contact dt { color:var(--gray); font-size:13px; letter-spacing:.1em; padding-top:3px; }
+  .btn { display:inline-block; margin-top:36px; background:var(--black); color:#fff; text-decoration:none; padding:16px 28px; font-weight:600; font-size:15px; }
+  .btn:hover { background:var(--wood); }
+  @media (max-width:820px){ .contact { grid-template-columns:1fr; gap:40px; } }
+
+  footer { background:var(--black); color:#777; padding:56px 0 64px; font-size:13px; line-height:2; }
+  footer .mark { font:900 clamp(40px, 9vw, 96px)/1 var(--display); letter-spacing:-.045em; color:#fff; margin-bottom:32px; }
 </style>
 </head>
 <body>
-<main>
-  <div class="brand">Space Available</div>
-  <h1>스페이스어베일러블</h1>
-  <p class="lead">할아버지가 자신의 시간을 품은 땅 위에 지은 작은 집이에요. 신부가 될 친구를 위한 브라이덜샤워와, 둘이서 남기는 셀프 웨딩 촬영을 위해 준비한 공간입니다. 메탈과 블랙의 단단한 결 위로 오후의 자연광이 머뭅니다.</p>
 
-  <h2>공간</h2>
-  <ul>
-    <li>무인 운영 — 이용 1시간 전 도어락 비밀번호 안내</li>
-    <li>기준 4명 · 최대 6명</li>
-    <li>셀프 테이블 세팅 키트 무료 (러너 · 조화 플라워 · 모형 케이크 · 트레이 · LED 초)</li>
-    <li>베일 · 부케 · 티아라 · 꽃팔찌, 조명 · 삼각대 · 블루투스 리모컨 무료</li>
-    <li>드레스는 지참 (탈의 공간 · 전신거울 · 행거 준비)</li>
-    <li>스냅 작가님 동반 자유 (인원에 포함, 추가 요금 없음)</li>
-  </ul>
+<nav><div class="wrap">
+  <a class="logo" href="#top">Space Available</a>
+  <div class="links"><a href="#story">이야기</a><a href="#space">공간</a><a href="#price">요금</a><a href="#visit">예약·오시는 길</a></div>
+</div></nav>
 
-  <h2>요금</h2>
-  <div class="table-wrap">
-  <table>
-    <tr><th></th><th>평일 (월~목)</th><th>주말 (금 19시~일)</th></tr>
-    <tr><td>시간제</td><td>28,000원/시간 · 최소 2시간</td><td>33,000원/시간 · 최소 3시간</td></tr>
-    <tr><td>데이타임 (12~18시)</td><td>130,000원</td><td>150,000원</td></tr>
-    <tr><td>야간 (22~익일 08시)</td><td>150,000원</td><td>180,000원</td></tr>
-  </table>
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow">Bridal Shower · Self Wedding · Daegu</div>
+  <h1>Space<br><span class="outline">Available</span></h1>
+  <p>따뜻한 기억이 오늘을 밝히는 곳.<br>신부가 될 친구를 위한 브라이덜샤워와, 둘이서 남기는 셀프 웨딩 촬영을 위해 준비한 작은 집이에요.</p>
+  <div class="meta"><span class="chip">대구 수성구</span><span class="chip">무인 운영</span><span class="chip">최대 6명</span><span class="chip">자연광 오후 2–4시</span></div>
+</div></header>
+
+<section id="story"><div class="wrap">
+  <div class="label" data-n="01">Story</div>
+  <div class="story">
+    <div>
+      <h2>할아버지가 시간을 품은 땅 위에 지은 작은 집</h2>
+      <div class="quote">“따뜻한 기억이 오늘을 밝히는 곳,<br>Space Available.”</div>
+      <div class="swatches">
+        <div class="sw"><i style="background:#111"></i><span>BLACK</span></div>
+        <div class="sw"><i style="background:#d6d6d6"></i><span>GRAY</span></div>
+        <div class="sw"><i style="background:#fff"></i><span>WHITE</span></div>
+        <div class="sw"><i class="wood"></i><span>WOOD</span></div>
+        <div class="sw"><i class="metal"></i><span>METAL</span></div>
+      </div>
+    </div>
+    <div class="poem">
+      <p>할아버지는 자신이 걸어온 시간을 품은 땅 위에 작은 집을 지었습니다. 사랑하는 사람들을 위한 마음과 가족의 내일을 바라보던 따뜻한 시선이 이곳에 조용히 쌓여 갔습니다.</p>
+      <p>기념일의 설렘도, 사랑을 전하는 순간도 이곳에서는 한 장면씩 자연스럽게 이어집니다. 누군가의 오늘이 더해지고, 또 하나의 장면으로 쌓여갑니다.</p>
+      <p>메탈과 블랙의 단단한 결 위로 부드러운 빛이 머물며 공간에 포근한 온기를 남깁니다.</p>
+      <p>당신의 순간이 머물고, 당신의 이야기가 이어지는 곳.<br>여기, 스페이스 어베일러블입니다.</p>
+    </div>
   </div>
-  <p class="small">4명 초과 시 1인 1시간당 8,000원 · 보증금 30,000원 (퇴실 후 48시간 이내 환급)</p>
+</div></section>
 
-  <h2>예약 · 문의</h2>
-  <ul>
-    <li>네이버 예약 (오픈 예정)</li>
-    <li>인스타그램 <a href="https://www.instagram.com/spaceavailable.official">@spaceavailable.official</a> DM</li>
-    <li>전화 010-9545-2291</li>
-  </ul>
+<section class="dark" id="space"><div class="wrap">
+  <div class="label" data-n="02">Moments</div>
+  <h2>이런 날을 위해 준비했어요</h2>
+  <div class="scenes">
+    <div class="scene"><div class="no">BRIDAL SHOWER</div><h3>신부가 될 친구에게</h3><p>도착하면 바로 꾸밀 수 있는 셀프 테이블 세팅 키트와 레퍼런스 사진. 대형 거울 앞에서 단체 사진까지.</p></div>
+    <div class="scene"><div class="no">SELF WEDDING</div><h3>둘이서 남기는 웨딩 사진</h3><p>오후의 자연광, 베일·부케·조명·삼각대. 스냅 작가님과 함께 오셔도 추가 요금이 없어요.</p></div>
+    <div class="scene"><div class="no">ANNIVERSARY</div><h3>기념일과 작은 모임</h3><p>생일, 프러포즈, 가족 기념일. 최대 6명이 머물기 좋은 크기의 조용한 공간이에요.</p></div>
+  </div>
+  <div class="gallery">
+    <div class="ph big">Photo · coming soon</div>
+    <div class="ph">Table setting</div>
+    <div class="ph">Mirror &amp; light</div>
+  </div>
+</div></section>
 
-  <h2>오시는 길</h2>
-  <p>대구광역시 수성구 신천동로98길 12, 3층 (수성동4가)<br><span class="small">건물 앞 주차 1대 · 2대 이상은 근처 공영주차장</span></p>
+<section><div class="wrap">
+  <div class="label" data-n="03">Included</div>
+  <h2>추가 비용 없이 준비되어 있어요</h2>
+  <div class="incl">
+    <div class="card"><span class="free">FREE</span><h4>셀프 테이블 세팅 키트</h4><p>린넨 러너, 조화 플라워, 모형 케이크, 디저트 트레이, LED 초. 예약 확정 후 레퍼런스 사진을 보내드려요.</p></div>
+    <div class="card"><span class="free">FREE</span><h4>웨딩 소품</h4><p>베일 · 부케 · 티아라 · 꽃팔찌. 드레스는 직접 가져와 주세요 — 탈의 공간 · 전신거울 · 행거가 있어요.</p></div>
+    <div class="card"><span class="free">FREE</span><h4>촬영 장비</h4><p>조명 · 삼각대 · 블루투스 리모컨. 대형 거울과 자연광이 가장 예쁜 시간은 오후 2시에서 4시.</p></div>
+    <div class="card"><span class="free">EASY</span><h4>무인 셀프 체크인</h4><p>이용 1시간 전 도어락 비밀번호를 보내드려요. 기다림 없이 예약한 시간에 바로 입실.</p></div>
+  </div>
+</div></section>
 
-  <footer>
-    상호 스페이스어베일러블 · 대표 문수영 · 사업자등록번호 537-02-03823<br>
-    대구광역시 수성구 신천동로98길 12, 3층 · 010-9545-2291
-  </footer>
-</main>
+<section id="price" style="padding-top:0"><div class="wrap">
+  <div class="label" data-n="04">Price</div>
+  <h2>요금</h2>
+  <div class="price-wrap">
+    <table>
+      <thead><tr><th></th><th>평일 · 월–목</th><th>주말 · 금 19시–일</th></tr></thead>
+      <tbody>
+        <tr><th>시간제<small>1시간 단위</small></th><td><b>28,000</b> 원/h<br><small>최소 2시간</small></td><td><b>33,000</b> 원/h<br><small>최소 3시간</small></td></tr>
+        <tr><th>데이타임 패키지<small>12:00–18:00 · 6시간</small></th><td><b>130,000</b> 원</td><td><b>150,000</b> 원</td></tr>
+        <tr><th>야간 패키지<small>22:00–익일 08:00 · 10시간</small></th><td><b>150,000</b> 원</td><td><b>180,000</b> 원</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">기준 4명 · 최대 6명 (4명 초과 시 1인 1시간당 8,000원) · 보증금 30,000원은 퇴실 후 48시간 이내 전액 환급 · 이용 시간에 준비와 정리 시간이 포함돼요.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="label" data-n="05">How it works</div>
+  <h2>이용 방법</h2>
+  <div class="steps">
+    <div class="step"><h4>예약</h4><p>네이버 예약 또는 인스타그램 DM으로 날짜와 시간을 정해요.</p></div>
+    <div class="step"><h4>보증금 입금</h4><p>보증금 30,000원 입금이 확인되면 예약이 확정돼요.</p></div>
+    <div class="step"><h4>셀프 입실</h4><p>이용 1시간 전 도어락 비밀번호를 받고 바로 들어오세요.</p></div>
+    <div class="step"><h4>퇴실 사진</h4><p>정리 사진 3장을 보내주시면 48시간 안에 보증금을 돌려드려요.</p></div>
+  </div>
+</div></section>
+
+<section id="visit" style="padding-top:0"><div class="wrap">
+  <div class="label" data-n="06">Visit</div>
+  <div class="contact">
+    <div>
+      <h2>예약 · 오시는 길</h2>
+      <a class="btn" href="https://www.instagram.com/spaceavailable.official">인스타그램 DM으로 문의하기</a>
+    </div>
+    <dl>
+      <dt>주소</dt><dd>대구광역시 수성구 신천동로98길 12, 3층<br>(수성동4가)</dd>
+      <dt>예약</dt><dd>네이버 예약 (오픈 예정)<br>인스타그램 @spaceavailable.official</dd>
+      <dt>전화</dt><dd>010-9545-2291</dd>
+      <dt>주차</dt><dd>건물 앞 1대 · 2대 이상은 근처 공영주차장</dd>
+    </dl>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="mark">Space Available</div>
+  상호 스페이스어베일러블 · 대표 문수영 · 사업자등록번호 537-02-03823<br>
+  대구광역시 수성구 신천동로98길 12, 3층 · 010-9545-2291<br>
+  © 2026 Space Available
+</div></footer>
+
 </body>
 </html>
