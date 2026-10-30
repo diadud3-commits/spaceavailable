@@ -3,140 +3,136 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Space Available</title>
+<title>SPACE AVAILABLE</title>
 <meta name="description" content="비어 있는 자리, 당신의 장면을 위해. 대구 수성구 브라이덜샤워 · 셀프 웨딩 공간.">
-<meta property="og:title" content="Space Available">
+<meta property="og:title" content="SPACE AVAILABLE">
 <meta property="og:description" content="비어 있는 자리, 당신의 장면을 위해.">
 <meta property="og:image" content="img/billboard.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#111; --gray:#8c8c8c; --line:#ececec; --blue:#1c4fc4; }
+  :root { --ink:#1a1a1a; --mid:#6f6f6f; --light:#a3a3a3; --hair:#e8e8e8; --blue:#1c4fc4; }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
-  body { background:#fff; color:var(--ink); font:300 15px/1.9 "Noto Sans KR", sans-serif; -webkit-font-smoothing:antialiased; letter-spacing:-.01em; }
+  body { background:#fff; color:var(--ink); font:300 13px/2 "Noto Sans KR", sans-serif; -webkit-font-smoothing:antialiased; }
   img { display:block; max-width:100%; height:auto; }
   a { color:inherit; text-decoration:none; }
-  .wrap { max-width:1120px; margin:0 auto; padding:0 clamp(24px, 5vw, 56px); }
-  .cap { font-size:11px; font-weight:400; letter-spacing:.18em; text-transform:uppercase; color:var(--gray); }
+  .wrap { max-width:1280px; margin:0 auto; padding:0 clamp(24px, 4vw, 48px); }
+  .caps { font-size:10.5px; font-weight:400; letter-spacing:.24em; text-transform:uppercase; }
+  .muted { color:var(--light); }
   .av { color:var(--blue); }
 
-  header { position:fixed; inset:0 0 auto; z-index:10; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); }
-  header .wrap { display:flex; justify-content:space-between; align-items:center; height:64px; }
-  header .logo { font-size:13px; font-weight:500; letter-spacing:.06em; }
-  header nav { display:flex; gap:32px; }
-  header nav a { font-size:12px; color:var(--gray); letter-spacing:.04em; }
+  /* header — 가운데 작은 워드마크 */
+  header { position:fixed; inset:0 0 auto; z-index:10; background:rgba(255,255,255,.95); }
+  header .wrap { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:72px; }
+  header .logo { font-size:12px; font-weight:500; letter-spacing:.32em; }
+  header nav { display:flex; gap:34px; }
+  header nav.r { justify-content:flex-end; }
+  header nav a { color:var(--mid); transition:color .3s; }
   header nav a:hover { color:var(--ink); }
-  @media (max-width:640px){ header nav { display:none; } }
+  @media (max-width:760px){ header nav { display:none; } header .wrap { grid-template-columns:1fr; justify-items:center; } }
 
-  section { padding:clamp(120px, 16vw, 220px) 0 0; }
+  /* hero — 이미지 한 장과 침묵 */
+  .hero { padding:clamp(150px, 18vw, 230px) 0 0; }
+  .hero figure { width:min(100%, 440px); margin:0 auto; }
+  .hero .line { margin-top:44px; text-align:center; }
+  .hero .line span { display:block; }
+  .hero .line .kr { margin-top:10px; font-size:12.5px; color:var(--mid); letter-spacing:.02em; }
 
-  /* hero */
-  .hero { padding-top:clamp(140px, 16vw, 200px); }
-  .hero figure { width:min(100%, 520px); margin:0 auto; }
-  .hero .mark { margin-top:clamp(56px, 7vw, 88px); text-align:center; font-size:clamp(32px, 4.4vw, 56px); font-weight:500; letter-spacing:-.035em; line-height:1.1; }
-  .hero h1 { margin-top:22px; text-align:center; font-size:clamp(16px, 1.6vw, 19px); font-weight:300; letter-spacing:-.02em; line-height:1.8; }
-  .hero p { text-align:center; margin-top:14px; }
+  section { padding-top:clamp(180px, 22vw, 300px); }
 
-  /* story */
-  .two { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px, 8vw, 120px); }
-  h2 { font-size:clamp(22px, 2.4vw, 28px); font-weight:400; line-height:1.6; letter-spacing:-.025em; }
-  .body p + p { margin-top:1.6em; }
-  .body { color:#444; font-size:15px; line-height:2.05; }
-  @media (max-width:800px){ .two { grid-template-columns:1fr; } }
+  /* story — 좁은 가운데 단 */
+  .narrow { max-width:400px; margin:0 auto; text-align:center; }
+  .narrow h2 { font-size:10.5px; font-weight:400; letter-spacing:.24em; margin-bottom:40px; }
+  .narrow p { color:var(--mid); font-size:13px; line-height:2.3; }
+  .narrow p + p { margin-top:2em; }
 
-  /* album — 사진마다 한 번씩, 장식 없이 */
-  .album { display:grid; grid-template-columns:repeat(4, 1fr); gap:clamp(16px, 2.4vw, 32px); align-items:end; margin-top:clamp(80px, 10vw, 140px); }
-  .album figcaption { margin-top:12px; }
-  @media (max-width:800px){ .album { grid-template-columns:1fr 1fr; } }
+  /* album — 한 줄, 넉넉한 간격 */
+  .album { display:flex; justify-content:center; align-items:flex-end; gap:clamp(20px, 3.4vw, 56px); margin-top:clamp(120px, 14vw, 180px); }
+  .album img { height:clamp(90px, 11vw, 160px); width:auto; min-width:0; }
+  @media (max-width:760px){ .album { flex-wrap:wrap; } .album img { height:110px; } }
 
-  /* list */
-  .list { margin-top:56px; border-top:1px solid var(--ink); }
-  .row { display:grid; grid-template-columns:1fr 2fr; gap:32px; padding:28px 0; border-bottom:1px solid var(--line); }
-  .row h3 { font-size:16px; font-weight:500; }
-  .row h3 span { display:block; margin-top:4px; }
-  .row p { color:#555; font-size:14.5px; }
-  @media (max-width:640px){ .row { grid-template-columns:1fr; gap:8px; } }
+  /* space — 세 단 */
+  .three { display:grid; grid-template-columns:repeat(3, 1fr); gap:clamp(32px, 6vw, 96px); text-align:center; }
+  .three h3 { font-size:10.5px; font-weight:400; letter-spacing:.24em; text-transform:uppercase; }
+  .three .kr { display:block; margin-top:6px; font-size:12.5px; color:var(--ink); letter-spacing:.02em; }
+  .three p { margin-top:22px; color:var(--mid); font-size:12.5px; line-height:2.1; }
+  @media (max-width:760px){ .three { grid-template-columns:1fr; gap:64px; } }
 
   /* information */
-  .info { display:grid; grid-template-columns:repeat(3, 1fr); gap:clamp(32px, 5vw, 72px); margin-top:56px; }
-  .info h4 { font-size:11px; font-weight:400; letter-spacing:.18em; text-transform:uppercase; color:var(--gray); padding-bottom:14px; border-bottom:1px solid var(--ink); margin-bottom:6px; }
-  .kv { display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-bottom:1px solid var(--line); font-size:14px; }
-  .kv b { font-weight:500; white-space:nowrap; }
-  .info ul, .info ol { list-style:none; font-size:14px; }
-  .info li { padding:11px 0; border-bottom:1px solid var(--line); }
-  .note { margin-top:16px; font-size:12.5px; color:var(--gray); line-height:1.9; }
+  .info { display:grid; grid-template-columns:repeat(3, 1fr); gap:clamp(36px, 6vw, 96px); }
+  .info h4 { font-size:10.5px; font-weight:400; letter-spacing:.24em; text-transform:uppercase; padding-bottom:16px; border-bottom:1px solid var(--hair); }
+  .kv { display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid var(--hair); font-size:12.5px; }
+  .kv span:first-child { color:var(--mid); }
+  .info ul, .info ol { list-style:none; font-size:12.5px; color:var(--mid); }
+  .info li { padding:12px 0; border-bottom:1px solid var(--hair); }
+  .note { margin-top:18px; font-size:11.5px; color:var(--light); line-height:2; }
   @media (max-width:900px){ .info { grid-template-columns:1fr; } }
 
-  /* visit */
-  .visit dl { display:grid; grid-template-columns:96px 1fr; row-gap:14px; font-size:14.5px; }
-  .visit dt { color:var(--gray); font-size:12px; letter-spacing:.06em; padding-top:2px; }
-  .btn { display:inline-block; margin-top:40px; padding:14px 30px; border:1px solid var(--ink); font-size:13px; font-weight:400; letter-spacing:.04em; transition:.25s; }
-  .btn:hover { background:var(--ink); color:#fff; }
+  /* visit — 가운데, 텍스트 링크 */
+  .visit { text-align:center; }
+  .visit dl { margin-top:36px; font-size:12.5px; color:var(--mid); line-height:2.4; }
+  .visit dt { display:none; }
+  .link { display:inline-block; margin-top:44px; font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; padding-bottom:4px; border-bottom:1px solid var(--ink); }
+  .link:hover { color:var(--blue); border-color:var(--blue); }
 
-  footer { margin-top:clamp(140px, 16vw, 220px); padding:28px 0 40px; border-top:1px solid var(--line); }
-  footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; font-size:11.5px; color:var(--gray); }
+  footer { margin-top:clamp(180px, 22vw, 300px); padding:0 0 40px; }
+  footer .big { font:400 clamp(56px, 13.4vw, 205px)/.85 "Cormorant Garamond", serif; letter-spacing:-.03em; color:var(--blue); white-space:nowrap; overflow:hidden; }
+  footer .legal { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; margin-top:32px; padding-top:20px; border-top:1px solid var(--hair); font-size:10.5px; color:var(--light); letter-spacing:.04em; }
 
-  .rv { opacity:0; transform:translateY(16px); transition:opacity 1s ease, transform 1s ease; }
-  .rv.on { opacity:1; transform:none; }
+  .rv { opacity:0; transition:opacity 1.6s ease; }
+  .rv.on { opacity:1; }
 </style>
 </head>
 <body>
 
 <header><div class="wrap">
-  <a class="logo" href="#top">SPACE <span class="av">AVAILABLE</span></a>
-  <nav><a href="#story">Story</a><a href="#space">Space</a><a href="#info">Information</a><a href="#visit">Visit</a></nav>
+  <nav class="caps"><a href="#story">Story</a><a href="#space">Space</a></nav>
+  <a class="logo" href="#top">SPACE AVAILABLE</a>
+  <nav class="caps r"><a href="#info">Information</a><a href="#visit">Visit</a></nav>
 </div></header>
 
-<section class="hero" id="top"><div class="wrap">
+<section class="hero" id="top" style="padding-top:clamp(150px, 18vw, 230px)"><div class="wrap">
   <figure class="rv"><img src="img/billboard.jpg" alt="파란 하늘 아래 SPACE AVAILABLE이라고 적힌 빈 광고판" width="1500" height="2000"></figure>
-  <div class="mark rv">Space <span class="av">Available</span></div>
-  <h1 class="rv">비어 있는 자리, 당신의 장면을 위해.</h1>
-  <p class="cap rv">Bridal shower &amp; self wedding · Daegu</p>
+  <p class="line rv"><span class="caps">Space Available</span><span class="kr">비어 있는 자리, 당신의 장면을 위해</span></p>
 </div></section>
 
 <section id="story"><div class="wrap">
-  <div class="two">
-    <div class="rv">
-      <div class="cap">Story</div>
-      <h2 style="margin-top:20px">할아버지가 시간을 품은 땅 위에<br>지은 작은 집</h2>
-    </div>
-    <div class="body rv">
-      <p>할아버지는 자신이 걸어온 시간을 품은 땅 위에 작은 집을 지었습니다. 사랑하는 사람들을 위한 마음과 가족의 내일을 바라보던 따뜻한 시선이 이곳에 조용히 쌓여 갔습니다.</p>
-      <p>기념일의 설렘도, 사랑을 전하는 순간도 이곳에서는 한 장면씩 자연스럽게 이어집니다. 누군가의 오늘이 더해지고, 또 하나의 장면으로 쌓여갑니다.</p>
-      <p>당신의 순간이 머물고, 당신의 이야기가 이어지는 곳.<br>여기, 스페이스 어베일러블입니다.</p>
-    </div>
+  <div class="narrow rv">
+    <h2>STORY</h2>
+    <p>할아버지는 자신이 걸어온 시간을 품은 땅 위에<br>작은 집을 지었습니다.</p>
+    <p>사랑하는 사람들을 위한 마음과<br>가족의 내일을 바라보던 따뜻한 시선이<br>이곳에 조용히 쌓여 갔습니다.</p>
+    <p>기념일의 설렘도, 사랑을 전하는 순간도<br>이곳에서는 한 장면씩 이어집니다.</p>
+    <p>당신의 순간이 머물고,<br>당신의 이야기가 이어지는 곳.</p>
   </div>
   <div class="album">
-    <figure class="rv"><img src="img/archive-grandkids.jpg" alt="할아버지와 두 손녀" width="331" height="224"><figcaption class="cap">01</figcaption></figure>
-    <figure class="rv"><img src="img/archive-ceremony.jpg" alt="한복과 정장 차림의 예식 사진" width="190" height="282"><figcaption class="cap">02</figcaption></figure>
-    <figure class="rv"><img src="img/archive-together.jpg" alt="함께 웃는 할아버지와 가족" width="302" height="178"><figcaption class="cap">03</figcaption></figure>
-    <figure class="rv"><img src="img/archive-cap.jpg" alt="모자를 쓴 할아버지" width="314" height="142"><figcaption class="cap">04</figcaption></figure>
+    <img class="rv" src="img/archive-grandkids.jpg" alt="할아버지와 두 손녀" width="331" height="224">
+    <img class="rv" src="img/archive-ceremony.jpg" alt="한복과 정장 차림의 예식 사진" width="190" height="282">
+    <img class="rv" src="img/archive-together.jpg" alt="함께 웃는 할아버지와 가족" width="302" height="178">
+    <img class="rv" src="img/archive-cap.jpg" alt="모자를 쓴 할아버지" width="314" height="142">
   </div>
 </div></section>
 
 <section id="space"><div class="wrap">
-  <div class="cap rv">Space</div>
-  <div class="list">
-    <div class="row rv"><h3>브라이덜샤워<span class="cap">Bridal shower</span></h3><p>셀프 테이블 세팅 키트와 레퍼런스 사진이 준비되어 있어요. 대형 거울 앞에서 다 함께 한 장.</p></div>
-    <div class="row rv"><h3>셀프 웨딩<span class="cap">Self wedding</span></h3><p>오후 2시에서 4시 사이의 자연광. 베일, 부케, 조명, 삼각대. 스냅 작가님 동반도 추가 요금이 없어요.</p></div>
-    <div class="row rv"><h3>기념일<span class="cap">Anniversary</span></h3><p>생일, 프러포즈, 가족의 날. 여섯 명이 머물기 좋은 크기예요.</p></div>
+  <div class="three">
+    <div class="rv"><h3>Bridal Shower</h3><span class="kr">브라이덜샤워</span><p>셀프 테이블 세팅 키트와<br>레퍼런스 사진이 준비되어 있어요.</p></div>
+    <div class="rv"><h3>Self Wedding</h3><span class="kr">셀프 웨딩</span><p>오후 2시에서 4시 사이의 자연광.<br>스냅 작가 동반도 추가 요금이 없어요.</p></div>
+    <div class="rv"><h3>Anniversary</h3><span class="kr">기념일</span><p>생일, 프러포즈, 가족의 날.<br>여섯 명이 머물기 좋은 크기예요.</p></div>
   </div>
 </div></section>
 
 <section id="info"><div class="wrap">
-  <div class="cap rv">Information</div>
   <div class="info">
     <div class="rv">
       <h4>Price</h4>
-      <div class="kv"><span>시간제 평일</span><b>28,000원 / 1h</b></div>
-      <div class="kv"><span>시간제 주말</span><b>33,000원 / 1h</b></div>
-      <div class="kv"><span>데이타임 평일 · 12–18시</span><b>130,000원</b></div>
-      <div class="kv"><span>데이타임 주말 · 12–18시</span><b>150,000원</b></div>
-      <div class="kv"><span>야간 평일 · 22–08시</span><b>150,000원</b></div>
-      <div class="kv"><span>야간 주말 · 22–08시</span><b>180,000원</b></div>
-      <p class="note">평일 월–목, 최소 2시간 · 주말 금 19시–일, 최소 3시간<br>기준 4명, 최대 6명 · 추가 1인 1시간 8,000원<br>보증금 30,000원 · 퇴실 후 48시간 이내 환급</p>
+      <div class="kv"><span>시간제 평일</span><span>28,000 / 1h</span></div>
+      <div class="kv"><span>시간제 주말</span><span>33,000 / 1h</span></div>
+      <div class="kv"><span>데이타임 평일 12–18</span><span>130,000</span></div>
+      <div class="kv"><span>데이타임 주말 12–18</span><span>150,000</span></div>
+      <div class="kv"><span>야간 평일 22–08</span><span>150,000</span></div>
+      <div class="kv"><span>야간 주말 22–08</span><span>180,000</span></div>
+      <p class="note">평일 월–목 최소 2시간 · 주말 금 19시–일 최소 3시간<br>기준 4명, 최대 6명 · 추가 1인 1시간 8,000<br>보증금 30,000 · 퇴실 후 48시간 이내 환급</p>
     </div>
     <div class="rv">
       <h4>Included</h4>
@@ -161,25 +157,22 @@
   </div>
 </div></section>
 
-<section id="visit" class="visit"><div class="wrap">
-  <div class="two">
-    <div class="rv">
-      <div class="cap">Visit</div>
-      <h2 style="margin-top:20px">당신의 장면을<br>기다리고 있어요.</h2>
-      <a class="btn" href="https://www.instagram.com/spaceavailable.official">Instagram</a>
-    </div>
-    <dl class="rv">
-      <dt>Address</dt><dd>대구광역시 수성구 신천동로98길 12, 3층</dd>
-      <dt>Reserve</dt><dd>네이버 예약 (오픈 예정)<br>@spaceavailable.official</dd>
-      <dt>Call</dt><dd>010-9545-2291</dd>
-      <dt>Parking</dt><dd>건물 앞 1대</dd>
-    </dl>
-  </div>
+<section id="visit" class="visit"><div class="wrap rv">
+  <h2 class="caps" style="font-weight:400">Visit</h2>
+  <dl>
+    <dt>Address</dt><dd>대구광역시 수성구 신천동로98길 12, 3층</dd>
+    <dt>Reserve</dt><dd>네이버 예약 (오픈 예정) · @spaceavailable.official</dd>
+    <dt>Call</dt><dd>010-9545-2291</dd>
+  </dl>
+  <a class="link" href="https://www.instagram.com/spaceavailable.official">Instagram</a>
 </div></section>
 
 <footer><div class="wrap">
-  <span>스페이스어베일러블 · 대표 문수영 · 사업자등록번호 537-02-03823</span>
-  <span>© 2026 Space <span class="av">Available</span></span>
+  <div class="big">Space Available</div>
+  <div class="legal">
+    <span>스페이스어베일러블 · 대표 문수영 · 사업자등록번호 537-02-03823</span>
+    <span>© 2026 Space Available</span>
+  </div>
 </div></footer>
 
 <script>
