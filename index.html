@@ -53,6 +53,24 @@
   .album img { height:clamp(90px, 11vw, 160px); width:auto; min-width:0; }
   @media (max-width:760px){ .album { flex-wrap:wrap; } .album img { height:110px; } }
 
+  /* the space — 실제 공간, 사진마다 한 번씩 */
+  .gal { display:grid; grid-template-columns:repeat(12, 1fr); column-gap:clamp(16px, 2.4vw, 32px); row-gap:clamp(90px, 11vw, 160px); align-items:start; }
+  .gal figure figcaption { margin-top:14px; color:var(--light); }
+  .g1 { grid-column:1 / span 7; }
+  .g2 { grid-column:9 / span 4; margin-top:clamp(120px, 16vw, 240px); }
+  .g3 { grid-column:4 / span 6; }
+  .g4 { grid-column:1 / span 4; }
+  .g5 { grid-column:5 / span 4; margin-top:clamp(60px, 8vw, 120px); }
+  .g6 { grid-column:9 / span 4; margin-top:clamp(120px, 16vw, 240px); }
+  .g7 { grid-column:6 / span 7; }
+  .gal-head { text-align:center; margin-bottom:clamp(90px, 11vw, 150px); }
+  .gal-head p { margin-top:14px; color:var(--mid); font-size:12.5px; }
+  @media (max-width:760px){
+    .gal { grid-template-columns:1fr 1fr; row-gap:48px; }
+    .gal figure { grid-column:1 / -1 !important; margin-top:0 !important; }
+    .g4, .g5 { grid-column:auto !important; }
+  }
+
   /* space — 세 단 */
   .three { display:grid; grid-template-columns:repeat(3, 1fr); gap:clamp(32px, 6vw, 96px); text-align:center; }
   .three h3 { font-size:10.5px; font-weight:400; letter-spacing:.24em; text-transform:uppercase; }
@@ -88,7 +106,7 @@
 <body>
 
 <header><div class="wrap">
-  <nav class="caps"><a href="#story">Story</a><a href="#space">Space</a></nav>
+  <nav class="caps"><a href="#story">Story</a><a href="#the-space">Space</a></nav>
   <a class="logo" href="#top">SPACE AVAILABLE</a>
   <nav class="caps r"><a href="#info">Information</a><a href="#visit">Visit</a></nav>
 </div></header>
@@ -111,6 +129,19 @@
     <img class="rv" src="img/archive-ceremony.jpg" alt="한복과 정장 차림의 예식 사진" width="190" height="282">
     <img class="rv" src="img/archive-together.jpg" alt="함께 웃는 할아버지와 가족" width="302" height="178">
     <img class="rv" src="img/archive-cap.jpg" alt="모자를 쓴 할아버지" width="314" height="142">
+  </div>
+</div></section>
+
+<section id="the-space"><div class="wrap">
+  <div class="gal-head rv"><h2 class="caps" style="font-weight:400">The Space</h2><p>하얀 벽, 메탈의 결, 오후의 빛</p></div>
+  <div class="gal">
+    <figure class="g1 rv"><img src="img/space-room.jpg" alt="테이블과 의자가 놓인 하얀 공간 전경" width="1206" height="1608"><figcaption class="caps">Room</figcaption></figure>
+    <figure class="g2 rv"><img src="img/space-table.jpg" alt="리본과 와인잔, 종이 조명이 놓인 테이블" width="1206" height="2144"><figcaption class="caps">Table</figcaption></figure>
+    <figure class="g3 rv"><img src="img/space-corner.jpg" alt="하얀 라운지 체어와 테이블이 있는 코너" width="1206" height="1608"><figcaption class="caps">Corner</figcaption></figure>
+    <figure class="g4 rv"><img src="img/space-lamp.jpg" alt="종이 조명과 유리잔 디테일" width="1206" height="1608"><figcaption class="caps">Light</figcaption></figure>
+    <figure class="g5 rv"><img src="img/space-sofa.jpg" alt="전신거울과 하얀 소파" width="1206" height="1608"><figcaption class="caps">Mirror</figcaption></figure>
+    <figure class="g6 rv"><img src="img/space-chair.jpg" alt="메탈 프레임의 하얀 의자" width="1206" height="1608"><figcaption class="caps">Chair</figcaption></figure>
+    <figure class="g7 rv"><img src="img/space-desk.jpg" alt="리본이 놓인 하얀 테이블" width="1206" height="1608"><figcaption class="caps">Setting</figcaption></figure>
   </div>
 </div></section>
 
