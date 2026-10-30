@@ -26,7 +26,8 @@
   /* header — 가운데 작은 워드마크 */
   header { position:fixed; inset:0 0 auto; z-index:10; background:rgba(255,255,255,.95); }
   header .wrap { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:72px; }
-  header .logo { font-size:12px; font-weight:500; letter-spacing:.32em; }
+  .wordmark { font-family:"Cormorant Garamond", serif; font-weight:400; color:var(--blue); letter-spacing:-.01em; text-transform:none; }
+  header .logo { font-size:22px; line-height:1; }
   header nav { display:flex; gap:34px; }
   header nav.r { justify-content:flex-end; }
   header nav a { color:var(--mid); transition:color .3s; }
@@ -96,7 +97,7 @@
   .link:hover { color:var(--blue); border-color:var(--blue); }
 
   footer { margin-top:clamp(180px, 22vw, 300px); padding:0 0 40px; }
-  footer .big { font:400 clamp(56px, 13.4vw, 205px)/.85 "Cormorant Garamond", serif; letter-spacing:-.03em; color:var(--blue); white-space:nowrap; overflow:hidden; }
+  footer .big { font-size:clamp(56px, 13.4vw, 205px); line-height:.85; letter-spacing:-.03em; white-space:nowrap; overflow:hidden; }
   footer .legal { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; margin-top:32px; padding-top:20px; border-top:1px solid var(--hair); font-size:10.5px; color:var(--light); letter-spacing:.04em; }
 
   .rv { opacity:0; transition:opacity 1.6s ease; }
@@ -107,13 +108,13 @@
 
 <header><div class="wrap">
   <nav class="caps"><a href="#story">Story</a><a href="#the-space">Space</a></nav>
-  <a class="logo" href="#top">SPACE AVAILABLE</a>
+  <a class="logo wordmark" href="#top">Space Available</a>
   <nav class="caps r"><a href="#info">Information</a><a href="#visit">Visit</a></nav>
 </div></header>
 
 <section class="hero" id="top" style="padding-top:clamp(150px, 18vw, 230px)"><div class="wrap">
   <figure class="rv"><img src="img/billboard.jpg" alt="파란 하늘 아래 SPACE AVAILABLE이라고 적힌 빈 광고판" width="1500" height="2000"></figure>
-  <p class="line rv"><span class="caps">Space Available</span><span class="kr">비어 있는 자리, 당신의 장면을 위해</span></p>
+  <p class="line rv"><span class="wordmark" style="font-size:26px; line-height:1.2">Space Available</span><span class="kr">비어 있는 자리, 당신의 장면을 위해</span></p>
 </div></section>
 
 <section id="story"><div class="wrap">
@@ -197,7 +198,7 @@
 </div></section>
 
 <footer><div class="wrap">
-  <div class="big">Space Available</div>
+  <div class="big wordmark">Space Available</div>
   <div class="legal">
     <span>스페이스어베일러블 · 대표 문수영 · 사업자등록번호 537-02-03823</span>
     <span>© 2026 Space Available</span>
