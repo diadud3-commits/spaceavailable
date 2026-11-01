@@ -57,22 +57,40 @@
   @media (max-width:760px){ .album { flex-wrap:wrap; } .album img { height:110px; } }
 
   /* the space — 실제 공간, 사진마다 한 번씩 */
-  .gal { display:grid; grid-template-columns:repeat(12, 1fr); column-gap:clamp(16px, 2.4vw, 32px); row-gap:clamp(90px, 11vw, 160px); align-items:start; }
-  .gal figure figcaption { margin-top:14px; color:var(--light); }
-  .g1 { grid-column:1 / span 7; }
-  .g2 { grid-column:9 / span 4; margin-top:clamp(120px, 16vw, 240px); }
-  .g3 { grid-column:4 / span 6; }
-  .g4 { grid-column:1 / span 4; }
-  .g5 { grid-column:5 / span 4; margin-top:clamp(60px, 8vw, 120px); }
-  .g6 { grid-column:9 / span 4; margin-top:clamp(120px, 16vw, 240px); }
-  .g7 { grid-column:6 / span 7; }
+  .gal { display:grid; grid-template-columns:repeat(12, 1fr); column-gap:clamp(16px, 2.4vw, 32px); row-gap:clamp(70px, 9vw, 140px); align-items:start; }
+  .gal figure figcaption { margin-top:12px; color:var(--light); }
   .gal-head { text-align:center; margin-bottom:clamp(90px, 11vw, 150px); }
   .gal-head p { margin-top:14px; color:var(--mid); font-size:12.5px; }
   @media (max-width:760px){
-    .gal { grid-template-columns:1fr 1fr; row-gap:48px; }
-    .gal figure { grid-column:1 / -1 !important; margin-top:0 !important; }
-    .g4, .g5 { grid-column:auto !important; }
+    .gal { grid-template-columns:1fr 1fr; row-gap:40px; }
+    .gal figure { grid-column:auto !important; margin-top:0 !important; }
+    .gal figure.wide { grid-column:1 / -1 !important; }
   }
+
+  /* inside — 비품 상세 */
+  .inside-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:clamp(36px, 5vw, 80px) clamp(28px, 5vw, 72px); }
+  .inside-grid h4 { font-size:10.5px; font-weight:400; letter-spacing:.24em; text-transform:uppercase; padding-bottom:14px; border-bottom:1px solid var(--hair); margin-bottom:4px; }
+  .inside-grid li { list-style:none; display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px solid var(--hair); font-size:12.5px; color:var(--mid); }
+  .inside-grid li span:last-child { color:var(--ink); white-space:nowrap; }
+  .inside-grid li.no { color:var(--light); }
+  .inside-grid li.no span:last-child { color:var(--light); }
+  @media (max-width:900px){ .inside-grid { grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .inside-grid { grid-template-columns:1fr; } }
+
+  /* calendar — 예약 현황 */
+  .cal { max-width:860px; margin:0 auto; }
+  .cal-hours { display:grid; grid-template-columns:120px repeat(14, 1fr); font-size:10px; color:var(--light); letter-spacing:.04em; padding-bottom:8px; }
+  .cal-row { display:grid; grid-template-columns:120px repeat(14, 1fr); align-items:center; border-top:1px solid var(--hair); padding:9px 0; }
+  .cal-row .d { font-size:12px; color:var(--ink); }
+  .cal-row .d small { color:var(--light); margin-left:6px; }
+  .cal-row i { display:block; height:18px; margin-right:2px; border:1px solid var(--hair); background:#fff; }
+  .cal-row i.busy { background:#e9e9e9; border-color:#e9e9e9; }
+  .cal-row i.past { background:#f6f6f6; border-color:#f6f6f6; }
+  .cal-legend { display:flex; justify-content:center; gap:22px; margin-top:26px; font-size:11px; color:var(--mid); }
+  .cal-legend i { display:inline-block; width:12px; height:12px; border:1px solid var(--hair); vertical-align:-2px; margin-right:6px; }
+  .cal-legend i.busy { background:#e9e9e9; border-color:#e9e9e9; }
+  .cal-note { text-align:center; margin-top:18px; font-size:11.5px; color:var(--light); }
+  @media (max-width:640px){ .cal-hours, .cal-row { grid-template-columns:84px repeat(14, 1fr); } .cal-hours span:nth-child(even) { visibility:hidden; } }
 
   /* space — 세 단 */
   .three { display:grid; grid-template-columns:repeat(3, 1fr); gap:clamp(32px, 6vw, 96px); text-align:center; }
@@ -109,9 +127,9 @@
 <body>
 
 <header><div class="wrap">
-  <nav class="caps"><a href="#story">Story</a><a href="#the-space">Space</a></nav>
+  <nav class="caps"><a href="#story">Story</a><a href="#the-space">Space</a><a href="#inside">Inside</a></nav>
   <a class="logo wordmark" href="#top">Space Available</a>
-  <nav class="caps r"><a href="#info">Information</a><a href="#visit">Visit</a></nav>
+  <nav class="caps r"><a href="#calendar">Calendar</a><a href="#info">Information</a><a href="#visit">Visit</a></nav>
 </div></header>
 
 <section class="hero" id="top" style="padding-top:clamp(150px, 18vw, 230px)"><div class="wrap">
@@ -137,15 +155,69 @@
 </div></section>
 
 <section id="the-space"><div class="wrap">
-  <div class="gal-head rv"><h2 class="caps" style="font-weight:400">The Space</h2><p>하얀 벽, 메탈의 결, 오후의 빛</p></div>
+  <div class="gal-head rv"><h2 class="caps" style="font-weight:400">The Space</h2><p>하얀 벽, 오후의 빛, 그리고 당신의 장면</p></div>
   <div class="gal">
-    <figure class="g1 rv"><img src="img/space-room.jpg" alt="테이블과 의자가 놓인 하얀 공간 전경" width="1206" height="1608"><figcaption class="caps">Room</figcaption></figure>
-    <figure class="g2 rv"><img src="img/space-table.jpg" alt="리본과 와인잔, 종이 조명이 놓인 테이블" width="1206" height="2144"><figcaption class="caps">Table</figcaption></figure>
-    <figure class="g3 rv"><img src="img/space-corner.jpg" alt="하얀 라운지 체어와 테이블이 있는 코너" width="1206" height="1608"><figcaption class="caps">Corner</figcaption></figure>
-    <figure class="g4 rv"><img src="img/space-lamp.jpg" alt="종이 조명과 유리잔 디테일" width="1206" height="1608"><figcaption class="caps">Light</figcaption></figure>
-    <figure class="g5 rv"><img src="img/space-sofa.jpg" alt="전신거울과 하얀 소파" width="1206" height="1608"><figcaption class="caps">Mirror</figcaption></figure>
-    <figure class="g6 rv"><img src="img/space-chair.jpg" alt="메탈 프레임의 하얀 의자" width="1206" height="1608"><figcaption class="caps">Chair</figcaption></figure>
-    <figure class="g7 rv"><img src="img/space-desk.jpg" alt="리본이 놓인 하얀 테이블" width="1206" height="1608"><figcaption class="caps">Setting</figcaption></figure>
+    <figure class="rv wide" style="grid-column:1 / span 7"><img src="img/g-window.jpg" alt="창으로 드는 오후의 빛" width="1050" height="1400" loading="lazy"><figcaption class="caps">Light</figcaption></figure>
+    <figure class="rv" style="grid-column:9 / span 4; margin-top:clamp(110px, 15.7vw, 220px)"><img src="img/g-chair-wood.jpg" alt="우드 체어와 흐르는 천" width="1050" height="1400" loading="lazy"><figcaption class="caps">Wood</figcaption></figure>
+    <figure class="rv" style="grid-column:1 / span 4"><img src="img/g-pedestal.jpg" alt="하얀 천을 덮은 좌대" width="1050" height="1400" loading="lazy"><figcaption class="caps">Pedestal</figcaption></figure>
+    <figure class="rv" style="grid-column:5 / span 4; margin-top:clamp(45px, 6.4vw, 90px)"><img src="img/g-black-roses.jpg" alt="좌대 위 블랙 플라워" width="1050" height="1400" loading="lazy"><figcaption class="caps">Flower</figcaption></figure>
+    <figure class="rv" style="grid-column:9 / span 4"><img src="img/g-veil-window.jpg" alt="창가의 베일" width="1050" height="1400" loading="lazy"><figcaption class="caps">Veil</figcaption></figure>
+    <figure class="rv wide" style="grid-column:4 / span 6"><img src="img/g-table-drape.jpg" alt="커튼을 드리운 테이블 세팅" width="1050" height="1400" loading="lazy"><figcaption class="caps">Table</figcaption></figure>
+    <figure class="rv" style="grid-column:1 / span 5"><img src="img/g-table-lounge.jpg" alt="라운지 체어와 테이블" width="1050" height="1400" loading="lazy"><figcaption class="caps">Lounge</figcaption></figure>
+    <figure class="rv wide" style="grid-column:7 / span 6; margin-top:clamp(80px, 11.4vw, 160px)"><img src="img/g-corner-drape.jpg" alt="커튼 아래 코너" width="1050" height="1400" loading="lazy"><figcaption class="caps">Corner</figcaption></figure>
+    <figure class="rv" style="grid-column:1 / span 4"><img src="img/g-mirror-veil.jpg" alt="대형 거울 앞, 베일" width="1050" height="1400" loading="lazy"><figcaption class="caps">Mirror</figcaption></figure>
+    <figure class="rv" style="grid-column:5 / span 4; margin-top:clamp(60px, 8.6vw, 120px)"><img src="img/g-mirror-bouquet.jpg" alt="거울과 블랙 부케" width="1050" height="1400" loading="lazy"><figcaption class="caps">Bouquet</figcaption></figure>
+    <figure class="rv" style="grid-column:9 / span 4"><img src="img/space-sofa.jpg" alt="전신거울과 소파" width="1206" height="1608" loading="lazy"><figcaption class="caps">Sofa</figcaption></figure>
+    <figure class="rv wide" style="grid-column:1 / span 7"><img src="img/g-white-dress.jpg" alt="화이트 드레스" width="1050" height="1400" loading="lazy"><figcaption class="caps">White</figcaption></figure>
+    <figure class="rv" style="grid-column:9 / span 4; margin-top:clamp(110px, 15.7vw, 220px)"><img src="img/g-dresses.jpg" alt="비치된 드레스" width="1050" height="1400" loading="lazy"><figcaption class="caps">Dresses</figcaption></figure>
+    <figure class="rv" style="grid-column:1 / span 4"><img src="img/g-veil-profile.jpg" alt="베일을 쓴 옆모습" width="793" height="1400" loading="lazy"><figcaption class="caps">Profile</figcaption></figure>
+    <figure class="rv" style="grid-column:5 / span 4; margin-top:clamp(45px, 6.4vw, 90px)"><img src="img/g-black-dress.jpg" alt="블랙 드레스" width="794" height="1400" loading="lazy"><figcaption class="caps">Black</figcaption></figure>
+    <figure class="rv" style="grid-column:9 / span 4"><img src="img/g-seated.jpg" alt="테이블에 앉아" width="792" height="1400" loading="lazy"><figcaption class="caps">Seated</figcaption></figure>
+    <figure class="rv wide" style="grid-column:4 / span 6"><img src="img/space-lamp.jpg" alt="종이 조명과 유리잔" width="1206" height="1608" loading="lazy"><figcaption class="caps">Detail</figcaption></figure>
+    <figure class="rv" style="grid-column:1 / span 5"><img src="img/g-boots.jpg" alt="디테일" width="1050" height="1400" loading="lazy"><figcaption class="caps">Detail</figcaption></figure>
+    <figure class="rv wide" style="grid-column:7 / span 6; margin-top:clamp(80px, 11.4vw, 160px)"><img src="img/space-chair.jpg" alt="메탈 체어" width="1206" height="1608" loading="lazy"><figcaption class="caps">Chair</figcaption></figure>
+    <figure class="rv wide" style="grid-column:4 / span 6"><img src="img/g-entrance.jpg" alt="입구의 포스터" width="1050" height="1400" loading="lazy"><figcaption class="caps">Entrance</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="inside"><div class="wrap">
+  <div class="gal-head rv"><h2 class="caps" style="font-weight:400">Inside</h2><p>공간 안에 준비된 것들</p></div>
+  <div class="inside-grid">
+    <div class="rv"><h4>Bridal &amp; Styling</h4><ul>
+      <li><span>셀프 테이블 세팅 키트</span><span>무료</span></li>
+      <li><span>베일 등 브라이덜 액세서리</span><span>무료</span></li>
+      <li><span>화이트·블랙 드레스</span><span>3벌</span></li>
+      <li><span>대형 전신거울</span><span>있음</span></li>
+      <li><span>LED 캔들</span><span>있음</span></li>
+    </ul></div>
+    <div class="rv"><h4>Kitchen</h4><ul>
+      <li><span>냉장고</span><span>있음</span></li>
+      <li><span>전자레인지</span><span>있음</span></li>
+      <li><span>전기포트</span><span>있음</span></li>
+      <li><span>식기 · 와인잔</span><span>6인</span></li>
+      <li><span>와인오프너 · 병따개</span><span>있음</span></li>
+      <li class="no"><span>조리도구</span><span>없음</span></li>
+    </ul></div>
+    <div class="rv"><h4>Living</h4><ul>
+      <li><span>냉난방기</span><span>있음</span></li>
+      <li><span>와이파이</span><span>있음</span></li>
+      <li><span>블루투스 스피커</span><span>있음</span></li>
+      <li><span>빔프로젝터</span><span>있음</span></li>
+      <li><span>멀티탭</span><span>있음</span></li>
+      <li class="no"><span>TV</span><span>없음</span></li>
+    </ul></div>
+    <div class="rv"><h4>Bath</h4><ul>
+      <li><span>핸드워시</span><span>있음</span></li>
+      <li class="no"><span>드라이기 · 고데기</span><span>없음</span></li>
+    </ul></div>
+    <div class="rv"><h4>Not provided</h4><ul>
+      <li class="no"><span>스팀다리미</span><span>없음</span></li>
+      <li class="no"><span>탈의실 · 행거</span><span>없음</span></li>
+      <li class="no"><span>보드게임</span><span>없음</span></li>
+    </ul></div>
+    <div class="rv"><h4>Safety</h4><ul>
+      <li><span>CCTV (출입구 · 공용부만)</span><span>있음</span></li>
+    </ul></div>
   </div>
 </div></section>
 
@@ -154,6 +226,16 @@
     <div class="rv"><h3>Bridal Shower</h3><span class="kr">브라이덜샤워</span><p>셀프 테이블 세팅 키트와<br>레퍼런스 사진이 준비되어 있어요.</p></div>
     <div class="rv"><h3>Self Wedding</h3><span class="kr">셀프 웨딩</span><p>오후 2시에서 4시 사이의 자연광.<br>스냅 작가 동반도 추가 요금이 없어요.</p></div>
     <div class="rv"><h3>Anniversary</h3><span class="kr">기념일</span><p>생일, 프러포즈, 가족의 날.<br>여섯 명이 머물기 좋은 크기예요.</p></div>
+  </div>
+</div></section>
+
+<section id="calendar"><div class="wrap">
+  <div class="gal-head rv" style="margin-bottom:56px"><h2 class="caps" style="font-weight:400">Calendar</h2><p>앞으로 2주 예약 현황</p></div>
+  <div class="cal rv">
+    <div class="cal-hours" id="cal-hours"></div>
+    <div id="cal-rows"></div>
+    <div class="cal-legend"><span><i></i>예약 가능</span><span><i class="busy"></i>예약 마감</span></div>
+    <p class="cal-note" id="cal-note">모든 예약 채널의 현황을 모아 보여드려요. 최종 예약은 네이버 예약 또는 DM으로 확정돼요.</p>
   </div>
 </div></section>
 
@@ -209,6 +291,36 @@
 <script>
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold:.1 });
   document.querySelectorAll('.rv').forEach(el => document.documentElement.classList.contains('shot') ? el.classList.add('on') : io.observe(el));
+
+  (async () => {
+    const OPEN = 10, CLOSE = 24, DAYS = 14, wd = '일월화수목금토';
+    const hours = document.getElementById('cal-hours');
+    hours.innerHTML = '<span></span>' + Array.from({length: CLOSE - OPEN}, (_, i) => `<span>${OPEN + i}</span>`).join('');
+    let busy = [], updated = '';
+    try {
+      const r = await fetch('data/availability.json?' + Date.now());
+      const j = await r.json(); busy = j.busy || []; updated = j.updated || '';
+    } catch (e) {}
+    const toDate = s => new Date(s + ':00+09:00');
+    const now = new Date();
+    const kstToday = new Date(now.toLocaleString('en-US', {timeZone: 'Asia/Seoul'}));
+    const rows = [];
+    for (let d = 0; d < DAYS; d++) {
+      const day = new Date(kstToday.getFullYear(), kstToday.getMonth(), kstToday.getDate() + d);
+      const y = day.getFullYear(), m = day.getMonth() + 1, dd = day.getDate();
+      const iso = `${y}-${String(m).padStart(2,'0')}-${String(dd).padStart(2,'0')}`;
+      let cells = '';
+      for (let h = OPEN; h < CLOSE; h++) {
+        const s = toDate(`${iso}T${String(h).padStart(2,'0')}:00`), e = new Date(s.getTime() + 3600e3);
+        const isBusy = busy.some(b => toDate(b.start) < e && toDate(b.end) > s);
+        const isPast = e <= now;
+        cells += `<i class="${isPast ? 'past' : isBusy ? 'busy' : ''}" title="${h}–${h+1}시"></i>`;
+      }
+      rows.push(`<div class="cal-row"><span class="d">${m}.${dd}<small>${wd[day.getDay()]}</small></span>${cells}</div>`);
+    }
+    document.getElementById('cal-rows').innerHTML = rows.join('');
+    if (updated) document.getElementById('cal-note').insertAdjacentText('beforeend', ` (${updated} 기준)`);
+  })();
 </script>
 </body>
 </html>
