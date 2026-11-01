@@ -1,0 +1,37 @@
+# 30분마다 — 노션 예약 DB를 읽어 사이트 예약 현황(data/availability.json) 갱신.
+name: availability
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: availability
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Export availability
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+        run: python scripts/export_availability.py
+      - name: Commit
+        run: |
+          git config user.name "availability-bot"
+          git config user.email "actions@github.com"
+          git add data/availability.json
+          git diff --cached --quiet && exit 0
+          git commit -m "data: 예약 현황 갱신"
+          git pull --rebase -q && git push -q
