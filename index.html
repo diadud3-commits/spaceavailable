@@ -79,8 +79,8 @@
 
   /* calendar — 예약 현황 */
   .cal { max-width:860px; margin:0 auto; }
-  .cal-hours { display:grid; grid-template-columns:120px repeat(14, 1fr); font-size:10px; color:var(--light); letter-spacing:.04em; padding-bottom:8px; }
-  .cal-row { display:grid; grid-template-columns:120px repeat(14, 1fr); align-items:center; border-top:1px solid var(--hair); padding:9px 0; }
+  .cal-hours { display:grid; grid-template-columns:120px repeat(13, 1fr); font-size:10px; color:var(--light); letter-spacing:.04em; padding-bottom:8px; }
+  .cal-row { display:grid; grid-template-columns:120px repeat(13, 1fr); align-items:center; border-top:1px solid var(--hair); padding:9px 0; }
   .cal-row .d { font-size:12px; color:var(--ink); }
   .cal-row .d small { color:var(--light); margin-left:6px; }
   .cal-row i { display:block; height:18px; margin-right:2px; border:1px solid var(--hair); background:#fff; }
@@ -90,7 +90,7 @@
   .cal-legend i { display:inline-block; width:12px; height:12px; border:1px solid var(--hair); vertical-align:-2px; margin-right:6px; }
   .cal-legend i.busy { background:#e9e9e9; border-color:#e9e9e9; }
   .cal-note { text-align:center; margin-top:18px; font-size:11.5px; color:var(--light); }
-  @media (max-width:640px){ .cal-hours, .cal-row { grid-template-columns:84px repeat(14, 1fr); } .cal-hours span:nth-child(even) { visibility:hidden; } }
+  @media (max-width:640px){ .cal-hours, .cal-row { grid-template-columns:84px repeat(13, 1fr); } .cal-hours span:nth-child(even) { visibility:hidden; } }
 
   /* space — 세 단 */
   .three { display:grid; grid-template-columns:repeat(3, 1fr); gap:clamp(32px, 6vw, 96px); text-align:center; }
@@ -251,7 +251,7 @@
       <div class="kv"><span>시간제 주말</span><span>33,000 / 1h</span></div>
       <div class="kv"><span>올데이 평일 · 8시간</span><span>180,000</span></div>
       <div class="kv"><span>올데이 주말 · 8시간</span><span>210,000</span></div>
-      <p class="note">시간제 평일 월–목 최소 2시간 · 주말 금 19시–일 · 최소 2시간 · 최대 5시간<br>올데이 10–23시 중 8시간 · 주말 올데이는 금–일<br>기준 4명, 최대 6명 · 추가 1인 1시간 8,000<br>보증금 30,000 · 퇴실 후 48시간 이내 환급</p>
+      <p class="note">평일 월–금 · 주말 토–일 · 매일 10–23시<br>시간제 최소 2시간 · 최대 5시간<br>올데이 10–23시 중 8시간<br>기준 4명, 최대 6명 · 추가 1인 1시간 8,000<br>보증금 30,000 · 퇴실 후 48시간 이내 환급</p>
     </div>
     <div class="rv">
       <h4>Included</h4>
@@ -265,7 +265,7 @@
       <h4>How it works</h4>
       <ol>
         <li>네이버 예약 또는 인스타그램 DM</li>
-        <li>보증금 입금 후 예약 확정</li>
+        <li>이용료 · 보증금 결제 후 예약 확정</li>
         <li>이용 1시간 전 비밀번호 안내</li>
         <li>퇴실 후 보증금 환급</li>
       </ol>
@@ -297,7 +297,7 @@
   document.querySelectorAll('.rv').forEach(el => document.documentElement.classList.contains('shot') ? el.classList.add('on') : io.observe(el));
 
   (async () => {
-    const OPEN = 10, CLOSE = 24, DAYS = 14, wd = '일월화수목금토';
+    const OPEN = 10, CLOSE = 23, DAYS = 14, wd = '일월화수목금토';
     const hours = document.getElementById('cal-hours');
     hours.innerHTML = '<span></span>' + Array.from({length: CLOSE - OPEN}, (_, i) => `<span>${OPEN + i}</span>`).join('');
     let busy = [], updated = '';
