@@ -90,6 +90,8 @@
   .info h4 { font-size:10.5px; font-weight:400; letter-spacing:.24em; text-transform:uppercase; padding-bottom:16px; border-bottom:1px solid var(--hair); }
   .kv { display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid var(--hair); font-size:12.5px; }
   .kv span:first-child { color:var(--mid); }
+  .kv s.was { color:var(--light); margin-right:8px; }
+  .promo-note { margin:12px 0 2px; font-size:11.5px; color:var(--blue); letter-spacing:.04em; }
   .info ul, .info ol { list-style:none; font-size:12.5px; color:var(--mid); }
   .info li { padding:12px 0; border-bottom:1px solid var(--hair); }
   .note { margin-top:18px; font-size:11.5px; color:var(--light); line-height:2; }
@@ -208,10 +210,11 @@
   <div class="info">
     <div class="rv">
       <h4>Price</h4>
-      <div class="kv"><span>시간제 평일</span><span>28,000 / 1h</span></div>
-      <div class="kv"><span>시간제 주말</span><span>33,000 / 1h</span></div>
-      <div class="kv"><span>올데이 평일 · 8시간</span><span>180,000</span></div>
-      <div class="kv"><span>올데이 주말 · 8시간</span><span>210,000</span></div>
+      <p class="promo-note">가오픈 특가 20% · 2026.11.26 – 12.31 이용분</p>
+      <div class="kv"><span>시간제 평일</span><span><s class="was">28,000</s>22,400 / 1h</span></div>
+      <div class="kv"><span>시간제 주말</span><span><s class="was">33,000</s>26,400 / 1h</span></div>
+      <div class="kv"><span>올데이 평일 · 8시간</span><span><s class="was">180,000</s>144,000</span></div>
+      <div class="kv"><span>올데이 주말 · 8시간</span><span><s class="was">210,000</s>168,000</span></div>
       <p class="note">평일 월–금 · 주말 토–일 · 매일 10–23시<br>시간제 최소 2시간 · 최대 5시간<br>올데이 10–23시 중 8시간<br>기준 4명, 최대 6명 · 추가 1인 1시간 8,000<br>보증금 30,000 · 퇴실 후 48시간 이내 환급</p>
     </div>
     <div class="rv">
