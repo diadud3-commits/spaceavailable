@@ -67,15 +67,10 @@
     .gal figure.wide { grid-column:1 / -1 !important; }
   }
 
-  /* inside — 비품 상세 */
-  .inside-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:clamp(36px, 5vw, 80px) clamp(28px, 5vw, 72px); }
-  .inside-grid h4 { font-size:10.5px; font-weight:400; letter-spacing:.24em; text-transform:uppercase; padding-bottom:14px; border-bottom:1px solid var(--hair); margin-bottom:4px; }
-  .inside-grid li { list-style:none; display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px solid var(--hair); font-size:12.5px; color:var(--mid); }
-  .inside-grid li span:last-child { color:var(--ink); white-space:nowrap; }
-  .inside-grid li.no { color:var(--light); }
-  .inside-grid li.no span:last-child { color:var(--light); }
-  @media (max-width:900px){ .inside-grid { grid-template-columns:1fr 1fr; } }
-  @media (max-width:560px){ .inside-grid { grid-template-columns:1fr; } }
+  /* inside — 준비된 것들 */
+  .inside-list { list-style:none; max-width:760px; margin:0 auto; columns:2; column-gap:clamp(32px, 6vw, 80px); }
+  .inside-list li { break-inside:avoid; padding:13px 0; border-bottom:1px solid var(--hair); font-size:13px; color:var(--mid); }
+  @media (max-width:640px){ .inside-list { columns:1; } }
 
   /* reserve — 예약 채널 버튼 */
   .reserve { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
@@ -177,36 +172,19 @@
 </div></section>
 
 <section id="inside"><div class="wrap">
-  <div class="gal-head rv"><h2 class="caps" style="font-weight:400">Inside</h2><p>공간 안에 준비된 것들</p></div>
-  <div class="inside-grid">
-    <div class="rv"><h4>Bridal &amp; Styling</h4><ul>
-      <li><span>셀프 테이블 세팅 키트</span><span>무료</span></li>
-      <li><span>베일 등 브라이덜 액세서리</span><span>무료</span></li>
-      <li><span>화이트·블랙 드레스 (S~M 정도의 사이즈 하나씩만)</span><span>4벌</span></li>
-      <li><span>대형 전신거울</span><span>있음</span></li>
-      
-    </ul></div>
-    <div class="rv"><h4>Kitchen</h4><ul>
-      <li><span>냉장고</span><span>있음</span></li>
-      <li><span>전자레인지</span><span>있음</span></li>
-      <li><span>전기포트</span><span>있음</span></li>
-      <li><span>식기 · 와인잔</span><span>있음</span></li>
-      <li><span>와인오프너 · 병따개</span><span>있음</span></li>
-    </ul></div>
-    <div class="rv"><h4>Living</h4><ul>
-      <li><span>냉난방기</span><span>있음</span></li>
-      <li><span>와이파이</span><span>있음</span></li>
-      <li><span>블루투스 스피커</span><span>있음</span></li>
-      <li><span>빔프로젝터</span><span>있음</span></li>
-      <li><span>멀티탭</span><span>있음</span></li>
-    </ul></div>
-    <div class="rv"><h4>Bath</h4><ul>
-      <li><span>핸드워시</span><span>있음</span></li>
-    </ul></div>
-    <div class="rv"><h4>Safety</h4><ul>
-      <li><span>CCTV (출입구 · 공용부만)</span><span>있음</span></li>
-    </ul></div>
-  </div>
+  <div class="gal-head rv"><h2 class="caps" style="font-weight:400">Inside</h2><p>모두 추가 비용 없이 이용하실 수 있어요</p></div>
+  <ul class="inside-list rv">
+    <li>셀프 테이블 세팅 키트 · 세팅 레퍼런스 사진 제공</li>
+    <li>베일 등 브라이덜 액세서리</li>
+    <li>화이트·블랙 드레스 4벌 (S~M 정도의 사이즈 하나씩만)</li>
+    <li>포토룸 2곳 · 다이닝 공간</li>
+    <li>대형 전신거울</li>
+    <li>냉장고 · 전자레인지 · 전기포트</li>
+    <li>식기 · 와인잔 · 와인오프너</li>
+    <li>냉난방기 · 와이파이</li>
+    <li>블루투스 스피커 · 빔프로젝터</li>
+    <li>CCTV (출입구 · 공용공간)</li>
+  </ul>
 </div></section>
 
 <section id="space"><div class="wrap">
