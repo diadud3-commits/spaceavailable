@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Guide · SPACE AVAILABLE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1a1a1a; --mid:#6f6f6f; --light:#a3a3a3; --hair:#e8e8e8; --blue:#1c4fc4; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#fff; color:var(--ink); font:300 15px/1.9 "Noto Sans KR", sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:560px; margin:0 auto; padding:56px 24px 72px; }
+  .wordmark { font-family:"Cormorant Garamond", serif; color:var(--blue); font-size:30px; text-align:center; line-height:1; }
+  .caps { font-size:10.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--light); }
+  .top .caps { text-align:center; margin-top:10px; }
+  .hello { text-align:center; margin:40px 0 8px; font-weight:400; font-size:20px; }
+  .hello + p { text-align:center; color:var(--mid); font-size:14px; }
+  nav { display:flex; justify-content:center; flex-wrap:wrap; gap:6px 18px; margin:36px 0 8px; }
+  nav a { color:var(--mid); text-decoration:none; font-size:13px; }
+  section { margin-top:56px; }
+  section h2 { font-weight:400; font-size:17px; margin-top:8px; padding-bottom:14px; border-bottom:1px solid var(--ink); }
+  .kv { display:flex; justify-content:space-between; gap:16px; padding:15px 0; border-bottom:1px solid var(--hair); }
+  .kv span:first-child { color:var(--mid); font-size:13px; }
+  .kv span:last-child { font-weight:400; text-align:right; }
+  ul { list-style:none; }
+  li { padding:14px 0; border-bottom:1px solid var(--hair); }
+  li small { display:block; color:var(--mid); font-size:12.5px; line-height:1.7; }
+  ol { list-style:none; counter-reset:n; }
+  ol li { counter-increment:n; display:flex; gap:14px; }
+  ol li::before { content:counter(n, decimal-leading-zero); font-family:"Cormorant Garamond", serif; color:var(--blue); font-size:17px; line-height:1.7; min-width:22px; }
+  .check li { display:flex; gap:14px; align-items:flex-start; }
+  .check input { width:18px; height:18px; margin-top:5px; accent-color:var(--blue); flex:none; }
+  .check label { cursor:pointer; }
+  .note { margin-top:16px; color:var(--mid); font-size:13px; }
+  footer { margin-top:64px; text-align:center; color:var(--light); font-size:12px; line-height:2; }
+  footer a { color:var(--mid); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="wordmark">Space Available</div>
+    <div class="caps">Guide</div>
+  </div>
+  <p class="hello">어서 오세요</p>
+  <p>오늘의 장면이 이곳에 좋은 기억으로 남기를 바라요.</p>
+
+  <nav>
+    <a href="#wifi">Wi-Fi</a><a href="#use">이용 안내</a><a href="#rules">지켜주세요</a><a href="#checkout">퇴실 체크리스트</a>
+  </nav>
+
+  <section id="wifi">
+    <div class="caps">Wi-Fi</div>
+    <h2>와이파이</h2>
+    <div class="kv"><span>이름</span><span>[와이파이 이름]</span></div>
+    <div class="kv"><span>비밀번호</span><span>[와이파이 비밀번호]</span></div>
+  </section>
+
+  <section id="use">
+    <div class="caps">Inside</div>
+    <h2>이용 안내</h2>
+    <ul>
+      <li>드레스 4벌, 베일 등 액세서리, 셀프 테이블 세팅 키트는 추가 비용 없이 쓰실 수 있어요<small>드레스를 입으신 채로 음식·음료는 삼가주세요. 사용 후 제자리에 걸어주세요.</small></li>
+      <li>냉장고 · 전자레인지 · 전기포트 · 식기 · 와인잔 · 와인오프너가 있어요</li>
+      <li>블루투스 스피커와 빔프로젝터를 자유롭게 연결해 쓰세요</li>
+      <li>대형 전신거울 앞이 사진 명당이에요<small>자연광이 가장 예쁜 시간은 오후 2시 – 4시예요</small></li>
+      <li>쓰레기는 분리해서 모아주세요</li>
+    </ul>
+  </section>
+
+  <section id="rules">
+    <div class="caps">House rules</div>
+    <h2>함께 지켜주세요</h2>
+    <ol>
+      <li><div>실내 흡연은 어려워요<small>전자담배 포함 · 적발 시 130,000원이 차감돼요</small></div></li>
+      <li><div>폭죽 · 스파클러 · 연막은 사용할 수 없어요</div></li>
+      <li><div>벽과 거울에는 테이프 · 스티커를 붙이지 말아주세요<small>마스킹테이프는 괜찮아요</small></div></li>
+      <li><div>고기 · 생선처럼 냄새가 강한 조리는 어려워요<small>음식 반입과 배달은 자유로워요</small></div></li>
+      <li><div>예약하신 인원만 이용해주세요<small>기준 4명 · 최대 6명</small></div></li>
+      <li><div>반려동물 동반은 어려워요</div></li>
+      <li><div>주거 동네라 밤에는 조금만 조용히 부탁드려요</div></li>
+    </ol>
+    <p class="note">시간 초과는 30분당 10,000원 · 파손 시 신품 정가로 청구될 수 있어요.</p>
+  </section>
+
+  <section id="checkout">
+    <div class="caps">Before you leave</div>
+    <h2>퇴실 전 체크리스트</h2>
+    <ul class="check">
+      <li><input type="checkbox" id="c1"><label for="c1">쓰레기 분리수거 후 지정 장소에</label></li>
+      <li><input type="checkbox" id="c2"><label for="c2">음식물 잔반 처리</label></li>
+      <li><input type="checkbox" id="c3"><label for="c3">설거지, 식기 · 와인잔 제자리</label></li>
+      <li><input type="checkbox" id="c4"><label for="c4">가구 · 소품 원래 자리로</label></li>
+      <li><input type="checkbox" id="c5"><label for="c5">드레스 · 액세서리 · 세팅 키트 제자리에</label></li>
+      <li><input type="checkbox" id="c6"><label for="c6">에어컨 · 난방 · 조명 · 빔프로젝터 OFF</label></li>
+      <li><input type="checkbox" id="c7"><label for="c7">창문 닫기</label></li>
+      <li><input type="checkbox" id="c8"><label for="c8">나가면서 도어락 잠김 확인</label></li>
+    </ul>
+    <p class="note">깨끗하게 사용해주시면 보증금은 퇴실 후 48시간 안에 전액 돌려드려요.</p>
+  </section>
+
+  <footer>
+    불편한 점이 있으면 언제든 연락 주세요<br>
+    010-9545-2291 · <a href="https://www.instagram.com/spaceavailable.official/">@spaceavailable.official</a><br><br>
+    오늘 함께해주셔서 고마워요.
+  </footer>
+</div>
+</body>
+</html>
