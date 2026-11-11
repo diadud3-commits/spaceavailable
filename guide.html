@@ -35,6 +35,8 @@
   .check input { width:18px; height:18px; margin-top:5px; accent-color:var(--blue); flex:none; }
   .check label { cursor:pointer; }
   .note { margin-top:16px; color:var(--mid); font-size:13px; }
+  .refs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:20px; }
+  .refs img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
   footer { margin-top:64px; text-align:center; color:var(--light); font-size:12px; line-height:2; }
   footer a { color:var(--mid); }
 </style>
@@ -49,7 +51,7 @@
   <p>오늘의 장면이 이곳에 좋은 기억으로 남기를 바라요.</p>
 
   <nav>
-    <a href="#wifi">Wi-Fi</a><a href="#use">이용 안내</a><a href="#rules">지켜주세요</a><a href="#checkout">퇴실 체크리스트</a>
+    <a href="#wifi">Wi-Fi</a><a href="#use">이용 안내</a><a href="#rules">지켜주세요</a><a href="#checkout">퇴실 체크리스트</a><a href="#reference">레퍼런스</a>
   </nav>
 
   <section id="wifi">
@@ -63,11 +65,12 @@
     <div class="caps">Inside</div>
     <h2>이용 안내</h2>
     <ul>
-      <li>드레스 4벌, 베일 등 액세서리, 셀프 테이블 세팅 키트는 추가 비용 없이 쓰실 수 있어요<small>드레스를 입으신 채로 음식·음료는 삼가주세요. 사용 후 제자리에 걸어주세요.</small></li>
-      <li>냉장고 · 전자레인지 · 전기포트 · 식기 · 와인잔 · 와인오프너가 있어요</li>
-      <li>블루투스 스피커와 빔프로젝터를 자유롭게 연결해 쓰세요</li>
-      <li>대형 전신거울 앞이 사진 명당이에요<small>자연광이 가장 예쁜 시간은 오후 2시 – 4시예요</small></li>
-      <li>쓰레기는 분리해서 모아주세요</li>
+      <li>드레스와 베일 등 모든 액세서리와 소품은 추가 비용 없이 쓰실 수 있어요<small>마음껏 공간을 즐겨주세요!</small></li>
+      <li>키친 선반을 열어보시면 식기 · 와인잔 · 오프너를 쓰실 수 있어요<small>사용하시면 설거지만 꼭 부탁드려요</small></li>
+      <li>블루투스 스피커를 쓰실 수 있어요<small>스피커의 동그란 부분을 꾹 누르면 핸드폰과 연결돼요</small></li>
+      <li>저녁에 오셨다면 빔프로젝터도 연결해보세요<small>빔프로젝터는 리모컨으로 켜고 조작해주세요</small></li>
+      <li>사진을 어떻게 찍을지 고민되신다면<small>맨 아래 <a href="#reference" style="color:inherit;text-decoration:underline">레퍼런스 사진</a>을 참고해주세요</small></li>
+      <li>쓰레기는 이렇게 모아만 주세요<small>일반 쓰레기는 일반 쓰레기 봉투에, 음식물은 음식물 쓰레기 봉투에, 분리수거할 것은 한 곳에 잘 나눠 모아주시면 저희가 치울게요!</small></li>
     </ul>
   </section>
 
@@ -90,8 +93,8 @@
     <div class="caps">Before you leave</div>
     <h2>퇴실 전 체크리스트</h2>
     <ul class="check">
-      <li><input type="checkbox" id="c1"><label for="c1">쓰레기 분리수거 후 지정 장소에</label></li>
-      <li><input type="checkbox" id="c2"><label for="c2">음식물 잔반 처리</label></li>
+      <li><input type="checkbox" id="c1"><label for="c1">쓰레기 · 음식물 · 분리수거 나눠서 모아두기</label></li>
+      <li><input type="checkbox" id="c2"><label for="c2">드신 음식 정리</label></li>
       <li><input type="checkbox" id="c3"><label for="c3">설거지, 식기 · 와인잔 제자리</label></li>
       <li><input type="checkbox" id="c4"><label for="c4">가구 · 소품 원래 자리로</label></li>
       <li><input type="checkbox" id="c5"><label for="c5">드레스 · 액세서리 · 세팅 키트 제자리에</label></li>
@@ -100,6 +103,21 @@
       <li><input type="checkbox" id="c8"><label for="c8">나가면서 도어락 잠김 확인</label></li>
     </ul>
     <p class="note">깨끗하게 사용해주시면 보증금은 퇴실 후 48시간 안에 전액 돌려드려요.</p>
+  </section>
+
+  <section id="reference">
+    <div class="caps">Reference</div>
+    <h2>이렇게 찍어보세요</h2>
+    <div class="refs">
+      <img src="img/g-mirror-veil.jpg" alt="" loading="lazy">
+      <img src="img/g-veil-window.jpg" alt="" loading="lazy">
+      <img src="img/g-veil-profile.jpg" alt="" loading="lazy">
+      <img src="img/g-seated.jpg" alt="" loading="lazy">
+      <img src="img/g-mirror-bouquet.jpg" alt="" loading="lazy">
+      <img src="img/g-white-dress.jpg" alt="" loading="lazy">
+      <img src="img/g-black-dress.jpg" alt="" loading="lazy">
+      <img src="img/g-table-drape.jpg" alt="" loading="lazy">
+    </div>
   </section>
 
   <footer>
