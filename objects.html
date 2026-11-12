@@ -49,6 +49,9 @@
   .card small { display:block; color:var(--mid); font-size:11.5px; line-height:1.6; }
   .card .go { display:inline-block; margin-top:6px; font-size:11.5px; color:var(--mid); border-bottom:1px solid var(--hair); }
   .card .go.off { color:var(--light); border:0; }
+  .story { text-align:center; color:var(--mid); font-size:14px; line-height:2.1; margin-top:44px; }
+  .story + .story { margin-top:22px; }
+  .card img { filter:saturate(.85); }
 </style>
 </head>
 <body>
@@ -57,9 +60,12 @@
     <div class="wordmark">Space Available</div>
     <div class="caps">Objects</div>
   </div>
-  <section id="objects" style="margin-top:44px">
+  <p class="story">이 공간의 가구와 오브제는<br>스페이스 어베일러블의 주인장이<br>하나씩 골라 오랫동안 모아온 것들이에요.</p>
+  <p class="story">한 공간에서 자리를 빛내던 가구들이<br>이곳으로 옮겨와 새로운 장면을 만나요.<br>그래서 이 공간의 구조와 오브제는<br>앞으로도 조금씩 바뀔 거예요.</p>
+
+  <section id="objects">
+    <div class="caps">Objects</div>
     <h2>공간 속 가구 · 오브제</h2>
-    <p class="note" style="margin-top:12px">공간이 바뀌면 이 목록도 함께 바뀌어요.</p>
     <div class="grid">
       <a class="card" href="https://smartstore.naver.com/seongju_melon/products/7617637535" target="_blank" rel="noopener"><img src="img/objects/01-bench.jpg" alt="스테인리스 슬랫 벤치 · seongju_melon" loading="lazy"><span class="en">Stainless Slat Bench</span><small>스테인리스 슬랫 벤치 · seongju_melon</small><span class="go">보기 ↗</span></a>
       <a class="card" href="https://smartstore.naver.com/seongju_melon/products/6294547281" target="_blank" rel="noopener"><img src="img/objects/02-chair.jpg" alt="로크브륀 스타일 체어 · seongju_melon" loading="lazy"><span class="en">Roquebrune Style Chair</span><small>로크브륀 스타일 체어 · seongju_melon</small><span class="go">보기 ↗</span></a>
