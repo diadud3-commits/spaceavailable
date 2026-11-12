@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Objects · SPACE AVAILABLE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1a1a1a; --mid:#6f6f6f; --light:#a3a3a3; --hair:#e8e8e8; --blue:#1c4fc4; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#fff; color:var(--ink); font:300 15px/1.9 "Noto Sans KR", sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:560px; margin:0 auto; padding:56px 24px 72px; }
+  .wordmark { font-family:"Cormorant Garamond", serif; color:var(--blue); font-size:30px; text-align:center; line-height:1; }
+  .caps { font-size:10.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--light); }
+  .top .caps { text-align:center; margin-top:10px; }
+  .hello { text-align:center; margin:40px 0 8px; font-weight:400; font-size:20px; }
+  .hello + p { text-align:center; color:var(--mid); font-size:14px; }
+  nav { display:flex; justify-content:center; flex-wrap:wrap; gap:6px 18px; margin:36px 0 8px; }
+  nav a { color:var(--mid); text-decoration:none; font-size:13px; }
+  section { margin-top:56px; }
+  section h2 { font-weight:400; font-size:17px; margin-top:8px; padding-bottom:14px; border-bottom:1px solid var(--ink); }
+  .kv { display:flex; justify-content:space-between; gap:16px; padding:15px 0; border-bottom:1px solid var(--hair); }
+  .kv span:first-child { color:var(--mid); font-size:13px; }
+  .kv span:last-child { font-weight:400; text-align:right; }
+  ul { list-style:none; }
+  li { padding:14px 0; border-bottom:1px solid var(--hair); }
+  li small { display:block; color:var(--mid); font-size:12.5px; line-height:1.7; }
+  ol { list-style:none; counter-reset:n; }
+  ol li { counter-increment:n; display:flex; gap:14px; }
+  ol li::before { content:counter(n, decimal-leading-zero); font-family:"Cormorant Garamond", serif; color:var(--blue); font-size:17px; line-height:1.7; min-width:22px; }
+  .check li { display:flex; gap:14px; align-items:flex-start; }
+  .check input { width:18px; height:18px; margin-top:5px; accent-color:var(--blue); flex:none; }
+  .check label { cursor:pointer; }
+  .note { margin-top:16px; color:var(--mid); font-size:13px; }
+  .refs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:20px; }
+  .refs img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
+  .obj { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .obj .en { font-family:"Cormorant Garamond", serif; font-size:18px; line-height:1.4; }
+  .obj a { color:var(--mid); font-size:12.5px; white-space:nowrap; text-decoration:none; border-bottom:1px solid var(--hair); }
+  .muted { color:var(--light); font-size:12px; }
+  footer { margin-top:64px; text-align:center; color:var(--light); font-size:12px; line-height:2; }
+  footer a { color:var(--mid); }
+  .obj { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .obj .en { font-family:"Cormorant Garamond", serif; font-size:18px; line-height:1.4; display:block; }
+  .obj a { color:var(--mid); font-size:12.5px; white-space:nowrap; text-decoration:none; border-bottom:1px solid var(--hair); }
+  .muted { color:var(--light); font-size:12px; }
+  .intro { text-align:center; color:var(--mid); font-size:14px; line-height:2; margin-top:40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="wordmark">Space Available</div>
+    <div class="caps">Objects</div>
+  </div>
+  <p class="intro">이 공간의 가구와 오브제는<br>스페이스 어베일러블의 주인장이<br>하나씩 골라 오랫동안 모아온 것들이에요.</p>
+  <p class="intro" style="margin-top:20px">한 공간에서 자리를 빛내던 가구들이<br>이곳으로 옮겨와 새로운 장면을 만나요.<br>그래서 이 공간의 구조와 오브제는<br>앞으로도 조금씩 바뀔 거예요.</p>
+
+  <section id="objects">
+    <div class="caps">Objects</div>
+    <h2>공간 속 가구 · 오브제</h2>
+    <ul>
+      <li class="obj"><div><span class="en">Stainless Slat Bench</span><small>스테인리스 슬랫 벤치 · seongju_melon</small></div><a href="https://smartstore.naver.com/seongju_melon/products/7617637535" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">Roquebrune Style Chair</span><small>로크브륀 스타일 체어 · seongju_melon</small></div><a href="https://smartstore.naver.com/seongju_melon/products/6294547281" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">Side Table</span><small>오르막 사이드 테이블 · 오르막 하우스</small></div><a href="https://store.ohou.se/goods/3972513" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">Louis Table Lamp</span><small>루이스 테이블램프 블랙 · 까사미아</small></div><a href="https://www.casamiamall.com/shop/goodsView?itemId=188767" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">Layer B</span><small>레이어 B · 툭 tuuk</small></div><a href="https://www.29cm.co.kr/products/2985599" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">FORSÅ Work Lamp</span><small>포르소 독서등 니켈 · IKEA</small></div><a href="https://www.ikea.com/kr/ko/p/forsa-work-lamp-nickel-plated-50283916/" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">Unity Cafe Table 1200</span><small>유니티 호마이카 카페테이블 · 포커스인가구</small></div><a href="https://store.ohou.se/goods/924808" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">LCH2 Lounge Chair</span><small>LCH2 2인 라운지체어 · 텍스쳐 TXTR</small></div><a href="https://www.movementlab.kr/product/lch2/9933/category/147/display/1/" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">Balloon Steel Mirror L</span><small>벌룬 스틸 전신거울 · 리샘</small></div><a href="https://store.ohou.se/goods/1619024" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">Rectangle Rug M</span><small>렉탱글 러그 · 스너그룸</small></div><a href="https://www.snugroom.kr/shop-all/?idx=60" target="_blank" rel="noopener">보기 ↗</a></li>
+      <li class="obj"><div><span class="en">Indian Shelf</span><small>아두닉 인디언 쉘브 선반 · 행잉스터프</small></div><span class="muted">판매 종료</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    주인장의 취향이 궁금하다면<br>
+    <a href="https://www.instagram.com/yupzip_changgo/" style="color:var(--blue)">@yupzip_changgo</a>
+  </footer>
+</div>
+</body>
+</html>
