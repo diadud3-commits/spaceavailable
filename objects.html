@@ -37,17 +37,18 @@
   .note { margin-top:16px; color:var(--mid); font-size:13px; }
   .refs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:20px; }
   .refs img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
-  .obj { display:flex; justify-content:space-between; align-items:center; gap:16px; }
-  .obj .en { font-family:"Cormorant Garamond", serif; font-size:18px; line-height:1.4; }
-  .obj a { color:var(--mid); font-size:12.5px; white-space:nowrap; text-decoration:none; border-bottom:1px solid var(--hair); }
   .muted { color:var(--light); font-size:12px; }
   footer { margin-top:64px; text-align:center; color:var(--light); font-size:12px; line-height:2; }
   footer a { color:var(--mid); }
-  .obj { display:flex; justify-content:space-between; align-items:center; gap:16px; }
-  .obj .en { font-family:"Cormorant Garamond", serif; font-size:18px; line-height:1.4; display:block; }
-  .obj a { color:var(--mid); font-size:12.5px; white-space:nowrap; text-decoration:none; border-bottom:1px solid var(--hair); }
   .muted { color:var(--light); font-size:12px; }
-  .intro { text-align:center; color:var(--mid); font-size:14px; line-height:2; margin-top:40px; }
+  .x-intro { text-align:center; color:var(--mid); font-size:14px; line-height:2; margin-top:40px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:28px 14px; margin-top:24px; }
+  .card { display:block; color:inherit; text-decoration:none; }
+  .card img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:#f4f4f4; }
+  .card .en { display:block; font-family:"Cormorant Garamond", serif; font-size:16.5px; line-height:1.35; margin-top:10px; }
+  .card small { display:block; color:var(--mid); font-size:11.5px; line-height:1.6; }
+  .card .go { display:inline-block; margin-top:6px; font-size:11.5px; color:var(--mid); border-bottom:1px solid var(--hair); }
+  .card .go.off { color:var(--light); border:0; }
 </style>
 </head>
 <body>
@@ -56,25 +57,22 @@
     <div class="wordmark">Space Available</div>
     <div class="caps">Objects</div>
   </div>
-  <p class="intro">이 공간의 가구와 오브제는<br>스페이스 어베일러블의 주인장이<br>하나씩 골라 오랫동안 모아온 것들이에요.</p>
-  <p class="intro" style="margin-top:20px">한 공간에서 자리를 빛내던 가구들이<br>이곳으로 옮겨와 새로운 장면을 만나요.<br>그래서 이 공간의 구조와 오브제는<br>앞으로도 조금씩 바뀔 거예요.</p>
-
-  <section id="objects">
-    <div class="caps">Objects</div>
+  <section id="objects" style="margin-top:44px">
     <h2>공간 속 가구 · 오브제</h2>
-    <ul>
-      <li class="obj"><div><span class="en">Stainless Slat Bench</span><small>스테인리스 슬랫 벤치 · seongju_melon</small></div><a href="https://smartstore.naver.com/seongju_melon/products/7617637535" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">Roquebrune Style Chair</span><small>로크브륀 스타일 체어 · seongju_melon</small></div><a href="https://smartstore.naver.com/seongju_melon/products/6294547281" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">Side Table</span><small>오르막 사이드 테이블 · 오르막 하우스</small></div><a href="https://store.ohou.se/goods/3972513" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">Louis Table Lamp</span><small>루이스 테이블램프 블랙 · 까사미아</small></div><a href="https://www.casamiamall.com/shop/goodsView?itemId=188767" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">Layer B</span><small>레이어 B · 툭 tuuk</small></div><a href="https://www.29cm.co.kr/products/2985599" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">FORSÅ Work Lamp</span><small>포르소 독서등 니켈 · IKEA</small></div><a href="https://www.ikea.com/kr/ko/p/forsa-work-lamp-nickel-plated-50283916/" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">Unity Cafe Table 1200</span><small>유니티 호마이카 카페테이블 · 포커스인가구</small></div><a href="https://store.ohou.se/goods/924808" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">LCH2 Lounge Chair</span><small>LCH2 2인 라운지체어 · 텍스쳐 TXTR</small></div><a href="https://www.movementlab.kr/product/lch2/9933/category/147/display/1/" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">Balloon Steel Mirror L</span><small>벌룬 스틸 전신거울 · 리샘</small></div><a href="https://store.ohou.se/goods/1619024" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">Rectangle Rug M</span><small>렉탱글 러그 · 스너그룸</small></div><a href="https://www.snugroom.kr/shop-all/?idx=60" target="_blank" rel="noopener">보기 ↗</a></li>
-      <li class="obj"><div><span class="en">Indian Shelf</span><small>아두닉 인디언 쉘브 선반 · 행잉스터프</small></div><span class="muted">판매 종료</span></li>
-    </ul>
+    <p class="note" style="margin-top:12px">공간이 바뀌면 이 목록도 함께 바뀌어요.</p>
+    <div class="grid">
+      <a class="card" href="https://smartstore.naver.com/seongju_melon/products/7617637535" target="_blank" rel="noopener"><img src="img/objects/01-bench.jpg" alt="스테인리스 슬랫 벤치 · seongju_melon" loading="lazy"><span class="en">Stainless Slat Bench</span><small>스테인리스 슬랫 벤치 · seongju_melon</small><span class="go">보기 ↗</span></a>
+      <a class="card" href="https://smartstore.naver.com/seongju_melon/products/6294547281" target="_blank" rel="noopener"><img src="img/objects/02-chair.jpg" alt="로크브륀 스타일 체어 · seongju_melon" loading="lazy"><span class="en">Roquebrune Style Chair</span><small>로크브륀 스타일 체어 · seongju_melon</small><span class="go">보기 ↗</span></a>
+      <a class="card" href="https://store.ohou.se/goods/3972513" target="_blank" rel="noopener"><img src="img/objects/03-side-table.jpg" alt="오르막 사이드 테이블 · 오르막 하우스" loading="lazy"><span class="en">Side Table</span><small>오르막 사이드 테이블 · 오르막 하우스</small><span class="go">보기 ↗</span></a>
+      <a class="card" href="https://www.casamiamall.com/shop/goodsView?itemId=188767" target="_blank" rel="noopener"><img src="img/objects/04-louis-lamp.jpg" alt="루이스 테이블램프 블랙 · 까사미아" loading="lazy"><span class="en">Louis Table Lamp</span><small>루이스 테이블램프 블랙 · 까사미아</small><span class="go">보기 ↗</span></a>
+      <a class="card" href="https://www.29cm.co.kr/products/2985599" target="_blank" rel="noopener"><img src="img/objects/05-layer-b.jpg" alt="레이어 B · 툭 tuuk" loading="lazy"><span class="en">Layer B</span><small>레이어 B · 툭 tuuk</small><span class="go">보기 ↗</span></a>
+      <a class="card" href="https://www.ikea.com/kr/ko/p/forsa-work-lamp-nickel-plated-50283916/" target="_blank" rel="noopener"><img src="img/objects/06-forsa.jpg" alt="포르소 독서등 니켈 · IKEA" loading="lazy"><span class="en">FORSÅ Work Lamp</span><small>포르소 독서등 니켈 · IKEA</small><span class="go">보기 ↗</span></a>
+      <a class="card" href="https://store.ohou.se/goods/924808" target="_blank" rel="noopener"><img src="img/objects/07-unity-table.jpg" alt="유니티 호마이카 카페테이블 · 포커스인가구" loading="lazy"><span class="en">Unity Cafe Table 1200</span><small>유니티 호마이카 카페테이블 · 포커스인가구</small><span class="go">보기 ↗</span></a>
+      <a class="card" href="https://www.movementlab.kr/product/lch2/9933/category/147/display/1/" target="_blank" rel="noopener"><img src="img/objects/08-lch2.jpg" alt="LCH2 2인 라운지체어 · 텍스쳐 TXTR" loading="lazy"><span class="en">LCH2 Lounge Chair</span><small>LCH2 2인 라운지체어 · 텍스쳐 TXTR</small><span class="go">보기 ↗</span></a>
+      <a class="card" href="https://store.ohou.se/goods/1619024" target="_blank" rel="noopener"><img src="img/objects/09-mirror.jpg" alt="벌룬 스틸 전신거울 · 리샘" loading="lazy"><span class="en">Balloon Steel Mirror L</span><small>벌룬 스틸 전신거울 · 리샘</small><span class="go">보기 ↗</span></a>
+      <a class="card" href="https://www.snugroom.kr/shop-all/?idx=60" target="_blank" rel="noopener"><img src="img/objects/11-rug.jpg" alt="렉탱글 러그 · 스너그룸" loading="lazy"><span class="en">Rectangle Rug M</span><small>렉탱글 러그 · 스너그룸</small><span class="go">보기 ↗</span></a>
+      <div class="card"><img src="img/objects/12-shelf.jpg" alt="아두닉 인디언 쉘브 선반 · 행잉스터프" loading="lazy"><span class="en">Indian Shelf</span><small>아두닉 인디언 쉘브 선반 · 행잉스터프</small><span class="go off">판매 종료</span></div>
+    </div>
   </section>
 
   <footer>
