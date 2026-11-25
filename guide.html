@@ -36,7 +36,7 @@
   .check label { cursor:pointer; }
   .note { margin-top:16px; color:var(--mid); font-size:13px; }
   .refs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:20px; }
-  .refs img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
+  .refs img, .refs video { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; background:#f3f3f1; }
   .obj { display:flex; justify-content:space-between; align-items:center; gap:16px; }
   .obj .en { font-family:"Cormorant Garamond", serif; font-size:18px; line-height:1.4; }
   .obj a { color:var(--mid); font-size:12.5px; white-space:nowrap; text-decoration:none; border-bottom:1px solid var(--hair); }
@@ -115,6 +115,13 @@
     <div class="caps">Reference</div>
     <h2>이렇게 찍어보세요</h2>
     <div class="refs">
+      <video src="img/ref/v-chair.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <img src="img/ref/r01.jpg" alt="" loading="lazy">
+      <img src="img/ref/r02.jpg" alt="" loading="lazy">
+      <img src="img/ref/r04.jpg" alt="" loading="lazy">
+      <img src="img/ref/r05.jpg" alt="" loading="lazy">
+      <img src="img/ref/r06.jpg" alt="" loading="lazy">
+      <img src="img/ref/r07.jpg" alt="" loading="lazy">
       <img src="img/g-mirror-veil.jpg" alt="" loading="lazy">
       <img src="img/g-veil-window.jpg" alt="" loading="lazy">
       <img src="img/g-veil-profile.jpg" alt="" loading="lazy">
