@@ -35,14 +35,18 @@
   .check input { width:18px; height:18px; margin-top:5px; accent-color:var(--blue); flex:none; }
   .check label { cursor:pointer; }
   .note { margin-top:16px; color:var(--mid); font-size:13px; }
-  .refs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:20px; }
-  .refs img, .refs video { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; background:#f3f3f1; }
   .obj { display:flex; justify-content:space-between; align-items:center; gap:16px; }
   .obj .en { font-family:"Cormorant Garamond", serif; font-size:18px; line-height:1.4; }
   .obj a { color:var(--mid); font-size:12.5px; white-space:nowrap; text-decoration:none; border-bottom:1px solid var(--hair); }
   .muted { color:var(--light); font-size:12px; }
   footer { margin-top:64px; text-align:center; color:var(--light); font-size:12px; line-height:2; }
   footer a { color:var(--mid); }
+  .refs { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-top:20px; }
+  .refs img, .refs video { width:100%; object-fit:cover; display:block; background:#f3f3f1; }
+  .refs .b { grid-column:span 6; aspect-ratio:4/3; }
+  .refs .h { grid-column:span 3; aspect-ratio:4/5; }
+  .refs .t { grid-column:span 2; aspect-ratio:3/4; }
+  .refs .b + .h, .refs .t + .h { margin-top:10px; }
 </style>
 </head>
 <body>
@@ -113,31 +117,37 @@
 
   <section id="reference">
     <div class="caps">Reference</div>
-    <h2>이렇게 찍어보세요</h2>
+    <h2>레퍼런스 사진</h2>
     <div class="refs">
-      <video src="img/ref/v-chair.mp4" autoplay muted loop playsinline preload="metadata"></video>
-      <img src="img/ref/r01.jpg" alt="" loading="lazy">
-      <img src="img/ref/r02.jpg" alt="" loading="lazy">
-      <img src="img/ref/r04.jpg" alt="" loading="lazy">
-      <img src="img/ref/r05.jpg" alt="" loading="lazy">
-      <img src="img/ref/r06.jpg" alt="" loading="lazy">
-      <img src="img/ref/r07.jpg" alt="" loading="lazy">
-      <img src="img/g-mirror-veil.jpg" alt="" loading="lazy">
-      <img src="img/g-veil-window.jpg" alt="" loading="lazy">
-      <img src="img/g-veil-profile.jpg" alt="" loading="lazy">
-      <img src="img/g-seated.jpg" alt="" loading="lazy">
-      <img src="img/g-mirror-bouquet.jpg" alt="" loading="lazy">
-      <img src="img/g-white-dress.jpg" alt="" loading="lazy">
-      <img src="img/g-black-dress.jpg" alt="" loading="lazy">
-      <img src="img/g-table-drape.jpg" alt="" loading="lazy">
-      <img src="img/g-dresses.jpg" alt="" loading="lazy">
-      <img src="img/g-boots.jpg" alt="" loading="lazy">
-      <img src="img/g-black-roses.jpg" alt="" loading="lazy">
-      <img src="img/g-pedestal.jpg" alt="" loading="lazy">
-      <img src="img/space-table.jpg" alt="" loading="lazy">
-      <img src="img/space-lamp.jpg" alt="" loading="lazy">
-      <img src="img/g-table-lounge.jpg" alt="" loading="lazy">
-      <img src="img/g-chair-wood.jpg" alt="" loading="lazy">
+      <video class="h" src="img/ref/v-chair.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <img class="h" src="img/g-table-drape.jpg" alt="" loading="lazy">
+      <img class="b" src="img/g-window.jpg" alt="" loading="lazy">
+      <img class="t" src="img/ref/r06.jpg" alt="" loading="lazy">
+      <img class="t" src="img/g-black-roses.jpg" alt="" loading="lazy">
+      <img class="t" src="img/ref/r02.jpg" alt="" loading="lazy">
+      <img class="h" src="img/g-mirror-veil.jpg" alt="" loading="lazy">
+      <img class="h" src="img/ref/r01.jpg" alt="" loading="lazy">
+      <img class="b" src="img/ref/r07.jpg" alt="" loading="lazy">
+      <img class="t" src="img/g-veil-window.jpg" alt="" loading="lazy">
+      <img class="t" src="img/space-lamp.jpg" alt="" loading="lazy">
+      <img class="t" src="img/g-boots.jpg" alt="" loading="lazy">
+      <img class="h" src="img/ref/r04.jpg" alt="" loading="lazy">
+      <img class="h" src="img/g-dresses.jpg" alt="" loading="lazy">
+      <img class="b" src="img/g-corner-drape.jpg" alt="" loading="lazy">
+      <img class="t" src="img/g-seated.jpg" alt="" loading="lazy">
+      <img class="t" src="img/g-pedestal.jpg" alt="" loading="lazy">
+      <img class="t" src="img/ref/r05.jpg" alt="" loading="lazy">
+      <img class="h" src="img/g-mirror-bouquet.jpg" alt="" loading="lazy">
+      <img class="h" src="img/space-table.jpg" alt="" loading="lazy">
+      <img class="b" src="img/g-table-lounge.jpg" alt="" loading="lazy">
+      <img class="t" src="img/g-veil-profile.jpg" alt="" loading="lazy">
+      <img class="t" src="img/g-chair-wood.jpg" alt="" loading="lazy">
+      <img class="t" src="img/g-black-dress.jpg" alt="" loading="lazy">
+      <img class="h" src="img/g-white-dress.jpg" alt="" loading="lazy">
+      <img class="h" src="img/space-sofa.jpg" alt="" loading="lazy">
+      <img class="b" src="img/space-room.jpg" alt="" loading="lazy">
+      <img class="h" src="img/space-desk.jpg" alt="" loading="lazy">
+      <img class="h" src="img/space-corner.jpg" alt="" loading="lazy">
     </div>
   </section>
 
